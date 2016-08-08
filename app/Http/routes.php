@@ -27,14 +27,14 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'], function (){
     网站后台路由
     */
     //后台登陆试图路由
-    Route::get('login', 'LoginController@loginView');
+    Route::get('login', 'LoginController@index');
     //后台登陆表单数据提交
     Route::post('login', 'LoginController@login');
     //后台登陆验证码
     Route::get('code', 'LoginController@code');
 
     //测试路由项目完成删除
-    Route::get('getcode', 'LoginController@getcode');
+//    Route::get('getcode', 'LoginController@getcode');
 });
 
 //进入主页路由

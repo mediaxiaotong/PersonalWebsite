@@ -14,5 +14,6 @@ class AdminUserSeeder extends Seeder
     {
         //
         App\Model\Admin::create(['name'=>'luochuanyuewu','password'=>Crypt::encrypt('luochuanyuewu')]);
+        App\Model\Admin::create(['name'=>'mediaxiaotong','password'=>Crypt::encrypt('mediaxiaotong')]);
     }
 }
