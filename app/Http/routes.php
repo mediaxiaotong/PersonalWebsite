@@ -15,6 +15,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+//进入网站前台大屏显示，还在加工中
+Route::get('/', 'IndexController@index');
+
 /*
 网站后台路由
 */
@@ -68,3 +71,25 @@ Route::group(['middleware' => ['admin.login'],'prefix'=>'admin','namespace'=>'Ad
 
 });
 
+//前台路由
+Route::group(['prefix'=>'home','namespace'=>'Home'], function (){
+    /*
+    网站前台路由
+    */
+    //前台主页路由
+    Route::get('index', 'IndexController@index');
+
+    //前台主页路由
+    Route::get('message', 'MessageController@index');
+
+    //注册视图路由 auth
+    Route::get('/register', 'UserAuthController@registerindex');
+    //注册提交路由
+    Route::post('/register', 'UserAuthController@register');
+    //登录视图路由
+    Route::get('/login', 'UserAuthController@loginindex');
+    //注册提交路由
+    Route::post('/login', 'UserAuthController@login');
+    //退出登录路由
+    Route::get('/quit', 'UserAuthController@quit');
+});

@@ -6,10 +6,11 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-class IndexController extends CommonController
+class MessageController extends CommonController
 {
+    //
     public function index()
     {
-        return view('home.index');
+        return view('home.message');
     }
 }
