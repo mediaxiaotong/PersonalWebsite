@@ -17,7 +17,6 @@ class CreateAdminsTable extends Migration
             $table->increments('id');
             $table->string('name');//->default('')->comment('管理员账号');
             $table->string('password');//->default('')->comment('管理员密码');
-            $table->integer('order');//->default(0)->comment('链接排序');
         });
     }
 

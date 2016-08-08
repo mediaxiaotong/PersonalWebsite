@@ -21,7 +21,8 @@ class IndexController extends CommonController
 
     public function quit()
     {
-        @session(['isAdmin' => null]);
+        Session::forget('isAdmin');
+        Session::forget('adminName');
         return redirect('admin/login');
     }
 }
