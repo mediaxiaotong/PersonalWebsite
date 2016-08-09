@@ -11,6 +11,10 @@
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/swiper.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/base.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/page.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('home/css/login.css')}}" />
+
+    {{--<script type="text/javascript" src="{{asset()}}js/jquery-1.9.0.min.js"></script>--}}
+
     <script src="{{asset('home/js/jquery.min.js')}}"></script>
 </head>
 <body>
@@ -92,8 +96,7 @@
     </div>
     <a class="toTop"><span class="glyphicon glyphicon-chevron-up"></span></a>
 </footer>
-
-{{--//qq登陆--}}
+    <!--注册end-->
 {{--快捷登陆暂未制作，--}}
 <div class="modal fade" id="login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -107,7 +110,7 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="loginBox">
-                    <a href="{{url('/login')}}" title="QQ登陆"><img src="{{asset('images/logo.png')}}"></a>
+                    <a href="{{url('home/login')}}" title="跳转登陆"><img src="{{asset('home/images/logo.png')}}"></a>
                 </div>
             </div>
             <div class="modal-footer">
@@ -171,5 +174,6 @@
 <script src="{{asset('home/js/swiper.min.js')}}"></script>
 <script src="{{asset('home/js/base.js')}}"></script>
 <script src="{{asset('home/layer/layer.js')}}"></script>
+<script src="{{asset('home/js/login.js')}}"></script>
 </body>
 </html>
