@@ -82,14 +82,12 @@ Route::group(['prefix'=>'home','namespace'=>'Home'], function (){
     //前台主页路由
     Route::get('message', 'MessageController@index');
 
-    //注册视图路由 auth
-    Route::get('/register', 'UserAuthController@registerindex');
     //注册提交路由
-    Route::post('/register', 'UserAuthController@register');
-    //登录视图路由
-    Route::get('/login', 'UserAuthController@loginindex');
+    Route::get('login', 'UserAuthController@index');
     //注册提交路由
-    Route::post('/login', 'UserAuthController@login');
+    Route::post('register', 'UserAuthController@register');
+    //注册提交路由
+    Route::post('login', 'UserAuthController@login');
     //退出登录路由
     Route::get('/quit', 'UserAuthController@quit');
 });
