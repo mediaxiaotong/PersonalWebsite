@@ -2,15 +2,28 @@
 
 namespace App\Http\Controllers\Home;
 
-use Illuminate\Http\Request;
+use App\Http\Requests\User\CreateMessageReuqest;
+use App\Model\Message;
 
-use App\Http\Requests;
 
 class MessageController extends CommonController
 {
     //
     public function index()
     {
-        return view('home.message');
+        $message = Message::orderBy('created_at','desc')->paginate(5);
+        return view('home.message',compact('message'));
+    }
+
+    public function message(CreateMessageReuqest $request)
+    {
+        $input = $request->except('_token');
+        $input['user_id'] = session('userId');
+        if($input)
+        {
+            Message::create($input);
+        }
+        return back()->with('errors',' <div class="alert alert-success">留言成功，感谢支持！！</div>');
+
     }
 }

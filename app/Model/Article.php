@@ -25,4 +25,10 @@ class Article extends Model
     {
         return $this->belongsTo('App\Model\Category','cate_id','id');
     }
+
+
+//    public function category()
+//    {
+//        return $this->belongsTo('App\Model\Category','cate_id','id');
+//    }
 }

@@ -11,14 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
 //进入网站前台大屏显示，还在加工中
-//Route::get('/', 'IndexController@index');
+Route::get('/', 'Home\IndexController@wecome');
 
 /*
+ *
 网站后台路由
 */
 //后台管理员登陆路由
@@ -78,6 +75,10 @@ Route::group(['prefix'=>'home','namespace'=>'Home'], function (){
     */
     //前台主页路由
     Route::get('index', 'IndexController@index');
+    //分类
+    Route::get('category/{id}', 'IndexController@category');
+    //文章
+    Route::get('article/{id}', 'IndexController@article');
 
     //前台主页路由
     Route::get('message', 'MessageController@index');
@@ -88,6 +89,10 @@ Route::group(['prefix'=>'home','namespace'=>'Home'], function (){
     Route::post('register', 'UserAuthController@register');
     //注册提交路由
     Route::post('login', 'UserAuthController@login');
+
+});
+Route::group(['middleware' => ['user.login'],'prefix'=>'home','namespace'=>'Home'], function () {
     //退出登录路由
     Route::get('/quit', 'UserAuthController@quit');
+    Route::post('message', 'MessageController@message');
 });

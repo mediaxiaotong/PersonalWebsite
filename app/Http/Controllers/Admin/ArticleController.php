@@ -81,7 +81,8 @@ class ArticleController extends CommonController
     // DELETE admin/article/{article} 删除单个文章
     public function destroy($id)
     {
-        $re = Article::where('id',$id)->delete();
+        $art = Article::where('id',$id)->first();
+        $re = $art->delete();
         if($re)
         {
             $data = [

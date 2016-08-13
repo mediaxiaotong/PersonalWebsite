@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\User;
 
 use App\Http\Requests\Request;
 
-class CreateMessageRequest extends Request
+class CreateLoginRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,15 +24,18 @@ class CreateMessageRequest extends Request
     public function rules()
     {
         return [
-            'content' => 'required|max:300',
+            'email' => 'required|email',
+            'password' => 'required',
         ];
     }
+
 
     public function messages()
     {
         return [
-            'content.required'=>'请填写内容！ ',
-            'content.max'=>'混蛋，你输入的字太多了，这样霸屏不好',
+            'name.required'=>'用户名不能为空',
+            'email.email'=>'邮箱账号格式错误',
+            'password.required'=>'密码不能为空',
         ];
     }
 }

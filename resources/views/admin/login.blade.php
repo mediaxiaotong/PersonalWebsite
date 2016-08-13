@@ -40,7 +40,7 @@
 					</li>
 				</ul>
 			</form>
-			<p><a href="#">返回首页</a> &copy; 2016 Powered by <a href="http://www.mediaxiaotong.com" target="_blank">http://www.mediaxiaotong.com</a></p>
+			<p><a href="{{url('home/index')}}">返回首页</a> &copy; 2016 Powered by <a href="http://www.mediaxiaotong.com" target="_blank">http://www.mediaxiaotong.com</a></p>
 		</div>
 	</div>
 </body>

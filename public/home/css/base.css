@@ -8,7 +8,7 @@ body {
 
 .navbar-qshang{
   border:none;
-  border-bottom: 5px solid #46b8da;
+  border-bottom: 2px solid deepskyblue;
 }
 .navlogo-qshang{
   padding-top: 0;
@@ -38,7 +38,7 @@ body {
 }
 
 .navbar-qshang .navbar-nav > .active > a, .navbar-qshang .navbar-nav > .active > a:focus, .navbar-qshang .navbar-nav > .active > a:hover{
-   background: #33bbdd;
+   background:deepskyblue;
    color:#fff;
 }
 
@@ -97,13 +97,13 @@ body {
   margin: 5px 0 20px 0;
 }
 .jja{
-    font-size: 15px;
+    font-size: 14px;
     text-indent: 2.5em;
     line-height: 25px;
     padding: 15px;
 }
 .jja a{
-    color:deepskyblue;
+    color:grey;
     letter-spacing:0.1em;
 }
 .jja a:hover{
@@ -181,8 +181,12 @@ body {
     margin-bottom:2px;
 }
 .view-title a{
-    font-size: 16px;
+    font-size: 13px;
     color:#333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width:250px
 }
 .view-title a:hover{
     color:#66afe9;
@@ -202,9 +206,11 @@ body {
 .bg-green{
 	background-color: #4df10e;
 }
-.qshang-title a{
-  font-size: 16px;
-  color:#333;
+.qshang-title a {
+
+    font-size: 14px;
+    color: hotpink;
+
 }
 .qshang-title a:hover{
   color:#f03573;
