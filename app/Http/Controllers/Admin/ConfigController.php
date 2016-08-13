@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CreateConfigRequest;
-use App\Http\Requests\UpdateChangeOrderRequest;
-use App\Http\Requests\UpdateConfigRequest;
+use App\Http\Requests\Admin\CreateConfigRequest;
+use App\Http\Requests\Admin\UpdateChangeOrderRequest;
+use App\Http\Requests\Admin\UpdateConfigRequest;
 use App\Model\Config;
 use Illuminate\Http\Request;
 

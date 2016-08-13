@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
-class UpdateChangeOrderRequest extends Request
+class CreateNavRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class UpdateChangeOrderRequest extends Request
     public function rules()
     {
         return [
-            'order' => 'required',
-            'order' => 'numeric',
+            'name'=>'required',
+            'url'=>'required',
         ];
     }
 
@@ -33,8 +33,8 @@ class UpdateChangeOrderRequest extends Request
     public function messages()
     {
         return [
-            'name.required'=>'排序不能为空',
-            'name.numeric'=>'排序只能是数字',
+            'name.required'=>'自定义导航名称不能为空！',
+            'url.required'=>'自定义导航URL不能为空！',
         ];
     }
 }

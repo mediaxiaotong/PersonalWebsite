@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
-class UpdateCategoryRequest extends Request
+class CreateArticleRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class UpdateCategoryRequest extends Request
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class UpdateCategoryRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required',
+            'title' => 'required',
+            'content' => 'required',
         ];
     }
 
@@ -32,7 +33,8 @@ class UpdateCategoryRequest extends Request
     public function messages()
     {
         return [
-            'name.required'=>'分类名称不能为空',
+            'title.required'=>'文章标题不能为空',
+            'content.required'=>'文章内容不能为空',
         ];
     }
 }

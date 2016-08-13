@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
-class CreateLinkRequest extends Request
+class CreateCategoryRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,6 @@ class CreateLinkRequest extends Request
     {
         return [
             'name' => 'required',
-            'url' => 'required',
         ];
     }
 
@@ -33,8 +32,7 @@ class CreateLinkRequest extends Request
     public function messages()
     {
         return [
-            'name.required' => '链接名称不能为空!',
-            'url.required' => 'URL不能为空',
+            'name.required'=>'分类名称不能为空',
         ];
     }
 }

@@ -16,7 +16,7 @@ Route::get('/', function () {
 });
 
 //进入网站前台大屏显示，还在加工中
-Route::get('/', 'IndexController@index');
+//Route::get('/', 'IndexController@index');
 
 /*
 网站后台路由
@@ -37,7 +37,7 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'], function (){
 //    Route::get('getcode', 'LoginController@getcode');
 });
 
-//进入主页路由
+//后台管理员路由
 Route::group(['middleware' => ['admin.login'],'prefix'=>'admin','namespace'=>'Admin'], function () {
     //主页路由
     Route::get('index', 'IndexController@index');

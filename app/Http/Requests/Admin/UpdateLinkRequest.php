@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
-class UpdateNavRequest extends Request
+class UpdateLinkRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class UpdateNavRequest extends Request
     public function rules()
     {
         return [
-            'name'=>'required',
-            'url'=>'required',
+            'name' => 'required',
+            'url' => 'required',
         ];
     }
 
@@ -33,8 +33,8 @@ class UpdateNavRequest extends Request
     public function messages()
     {
         return [
-            'name.required'=>'自定义导航名称不能为空！',
-            'url.required'=>'自定义导航URL不能为空！',
+            'name.required' => '链接名称不能为空!',
+            'url.required' => 'URL不能为空',
         ];
     }
 }

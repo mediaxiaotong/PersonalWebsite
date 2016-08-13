@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
-class UpdateLinkRequest extends Request
+class CreateConfigRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class UpdateLinkRequest extends Request
     public function rules()
     {
         return [
-            'name' => 'required',
-            'url' => 'required',
+            'name'=>'required',
+            'title'=>'required',
         ];
     }
 
@@ -33,8 +33,8 @@ class UpdateLinkRequest extends Request
     public function messages()
     {
         return [
-            'name.required' => '链接名称不能为空!',
-            'url.required' => 'URL不能为空',
+            'name.required'=>'配置项名称不能为空！',
+            'title.required'=>'配置项标题不能为空！',
         ];
     }
 }

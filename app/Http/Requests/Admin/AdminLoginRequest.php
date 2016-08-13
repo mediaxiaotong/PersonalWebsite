@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
-class CreateCategoryRequest extends Request
+class AdminLoginRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,6 +25,8 @@ class CreateCategoryRequest extends Request
     {
         return [
             'name' => 'required',
+            'password' => 'required',
+            'code' => 'required',
         ];
     }
 
@@ -32,7 +34,9 @@ class CreateCategoryRequest extends Request
     public function messages()
     {
         return [
-            'name.required'=>'分类名称不能为空',
+            'name.required'=>'账号不能为空',
+            'password.required'=>'密码不能为空',
+            'code.required'=>'验证码不能为空',
         ];
     }
 }

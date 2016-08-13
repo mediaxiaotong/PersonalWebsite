@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
-class CreateConfigRequest extends Request
+class UpdateCategoryRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class CreateConfigRequest extends Request
      */
     public function authorize()
     {
-        return true;
+        return false;
     }
 
     /**
@@ -24,8 +24,7 @@ class CreateConfigRequest extends Request
     public function rules()
     {
         return [
-            'name'=>'required',
-            'title'=>'required',
+            'name' => 'required',
         ];
     }
 
@@ -33,8 +32,7 @@ class CreateConfigRequest extends Request
     public function messages()
     {
         return [
-            'name.required'=>'配置项名称不能为空！',
-            'title.required'=>'配置项标题不能为空！',
+            'name.required'=>'分类名称不能为空',
         ];
     }
 }
