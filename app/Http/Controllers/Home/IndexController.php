@@ -21,7 +21,7 @@ class IndexController extends CommonController
     public function index()
     {
         //获取最新文章图文列表-3篇
-        $new = Article::orderBy('created_at','desc')->paginate(3);
+        $new = Article::orderBy('created_at','desc')->paginate(4);
         return view('home.index', compact('new'));
 
     }

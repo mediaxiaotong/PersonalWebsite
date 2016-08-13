@@ -33,7 +33,7 @@
                     <a class="dropdown-toggle animated" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list"></span> 分类<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         @foreach($cate_nav as $cn)
-                        <li><a href="{{url('home/category/'.$cn->id)}}">{{$cn->name}}</a></li>
+                            <li><a href="{{url('home/category/'.$cn->id)}}" class="glyphicon glyphicon-align-justify">&nbsp;{{$cn->name}}</a></li>
                         @endforeach
                     </ul>
                 </li>
@@ -128,7 +128,7 @@
                     <h4 class="title"><span class="glyphicon glyphicon-link"></span>&nbsp;&nbsp;友情链接</h4>
                     <div class="linkBox">
                         @foreach($link as $l)
-                            <a href="{{url($l->url)}}" class="btn btn-default btn-xs" target="_blank">{{$l->name}}</a>
+                                <a href="{{url($l->url)}}" class="btn btn-default btn-xs glyphicon glyphicon-flag" target="_blank">&nbsp;{{$l->name}}</a>
                         @endforeach
                     </div>
                 </div>

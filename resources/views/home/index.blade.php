@@ -49,10 +49,12 @@
                         </div>
                         <div class="col qshang-info">
                             <span class="glyphicon glyphicon-time"></span>
-                            {{$n->created_at}}&nbsp;&nbsp;分类：[&nbsp;{{$n->category->name}}&nbsp; ]
-                            <span class="hidden-xs">点击：{{$n->view}}</span>
+                            时间【{{$n->created_at}}】&nbsp;&nbsp;
+                            <span class="glyphicon glyphicon-edit"></span>
+                            分类【{{$n->category->name}}】
+                            <span class="hidden-xs glyphicon glyphicon-play-circle">点击【{{$n->view}}】</span>
                             <div class="look-all pull-right ">
-                                <a href="{{url('/home/article/'.$n->id)}}" class="button border-blue" role="button">查看详细</a>
+                                <a href="{{url('home/article/'.$n->id)}}" class="button border-blue" role="button">查看详细</a>
                             </div>
                         </div>
                     </div>

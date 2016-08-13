@@ -7,14 +7,14 @@
 @section('content')
     <div class="swiper-container banner" id="myCarousel">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background: #223240">
-                <img src="{{asset('home/images/banner/banner01.jpg')}}" alt="">
+            <div class="swiper-slide" style="background:rgb(110,149,153)">
+                <img src="{{asset('home/images/banner/banner1.png')}}" alt="">
             </div>
-            <div class="swiper-slide" style="background: #f4e3da">
-                <img src="{{asset('home/images/slide2.png')}}" alt="">
+            <div class="swiper-slide" style="background:rgb(184,183,162)">
+                <img src="{{asset('home/images/banner/banner2.png')}}" alt="">
             </div>
-            <div class="swiper-slide" style="background: #dd292c">
-                <img src="{{asset('home/images/slide3.png')}}" alt="">
+            <div class="swiper-slide" style="background-color:rgb(117,199,197)">
+                <img src="{{asset('home/images/banner/banner3.png')}}" alt="">
             </div>
         </div>
         <div class="swiper-pagination "></div>
@@ -24,10 +24,9 @@
     <div class="tab1">
         <div class="container">
             <ol class="breadcrumb chip qshang-box">
-                <li><a href="{{url('home/index')}}">首页</a></li>
-                <li><a>分类</a></li>
-                <li><a href="{{url('home/category/'.$cate->id)}}">{{$cate->name}}</a></li>
-                <li class="active">文章正文</li>
+                <li><a href="{{url('home/index')}}" class="glyphicon glyphicon-home">首页</a></li>
+                <li><a href="{{url('home/category/'.$cate->id)}}" class="glyphicon glyphicon-align-justify">{{$cate->name}}</a></li>
+                <li class="active"><span class="glyphicon glyphicon-tower"></span> 文章正文</li>
             </ol>
             <div class="line-big">
                 <div class="xl12 xm8">
@@ -37,14 +36,17 @@
                             <div class="writeBox">
                                 <div class="a-write">
                                     <div class="info-w">
-                                        时间：{{$art->created_at}}
-                                        作者：<a>{{$art->editor}}</a>&nbsp;&nbsp;
-                                        <span class="hidden-xs">阅读：{{$art->view}}</span>
+                                        <span class="glyphicon glyphicon-time"></span>
+                                        时间【{{$art->created_at}}】&nbsp;&nbsp;
+                                        <span class="glyphicon glyphicon-edit"></span>
+                                        分类【{{$art->editor}}】
+                                        <span class="glyphicon glyphicon-play-circle"></span>
+                                        查看【{{$art->view}}】
                                         &nbsp;
                                     </div>
 
                                     <div class="bdsharebuttonbox fenxiang hidden-xs bdshare-button-style1-16" data-bd-bind="1470646952370">
-                                        <span class="pull-left">分享到：</span>
+                                        <span class="pull-left "><span class="glyphicon glyphicon-share"></span>分享到：</span>
                                         <a title="分享到QQ空间" class="bds_qzone" href="#" data-cmd="qzone"></a>
                                         <a title="分享到腾讯微博" class="bds_tqq" href="#" data-cmd="tqq"></a>
                                         <a title="分享到新浪微博" class="bds_tsina" href="#" data-cmd="tsina"></a>

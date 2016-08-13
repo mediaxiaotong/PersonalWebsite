@@ -11,7 +11,7 @@ class MessageController extends CommonController
     //
     public function index()
     {
-        $message = Message::orderBy('created_at','desc')->paginate(5);
+        $message = Message::orderBy('created_at','desc')->paginate(7);
         return view('home.message',compact('message'));
     }
 

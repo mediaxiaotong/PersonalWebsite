@@ -7,14 +7,14 @@
 @section('content')
     <div class="swiper-container banner" id="myCarousel">
         <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background: #223240">
-                <img src="{{asset('home/images/slide1.png')}}" alt="">
+            <div class="swiper-slide" style="background:rgb(110,149,153)">
+                <img src="{{asset('home/images/banner/banner1.png')}}" alt="">
             </div>
-            <div class="swiper-slide" style="background: #f4e3da">
-                <img src="{{asset('home/images/slide2.png')}}" alt="">
+            <div class="swiper-slide" style="background:rgb(184,183,162)">
+                <img src="{{asset('home/images/banner/banner2.png')}}" alt="">
             </div>
-            <div class="swiper-slide" style="background: #dd292c">
-                <img src="{{asset('home/images/slide3.png')}}" alt="">
+            <div class="swiper-slide" style="background-color:rgb(117,199,197)">
+                <img src="{{asset('home/images/banner/banner3.png')}}" alt="">
             </div>
         </div>
         <div class="swiper-pagination "></div>
@@ -24,9 +24,8 @@
     <div class="tab1">
         <div class="container">
             <ol class="breadcrumb chip qshang-box">
-                <li><a href="{{url('home/index')}}">首页</a></li>
-                <li> <a>分类</a></li>
-                <li class="active"><a>{{$field->name}}</a></li>
+                <li><a href="{{url('home/index')}}" class="glyphicon glyphicon-home">首页</a></li>
+                <li class="active"><span class="glyphicon glyphicon-align-justify"></span>{{$field->name}}</li>
             </ol>
             <div class="row">
                 <div class="col-md-7">
@@ -51,8 +50,10 @@
                             </div>
                             <div class="col qshang-info">
                                 <span class="glyphicon glyphicon-time"></span>
-                                {{$d->created_at}}&nbsp;&nbsp;分类：{{$field->name}}
-                                <span class="hidden-xs">点击：{{$d->view}}</span>
+                                时间【{{$d->created_at}}】&nbsp;&nbsp;
+                                <span class="glyphicon glyphicon-edit"></span>
+                                分类【{{$field->name}}】
+                                <span class="hidden-xs glyphicon glyphicon-play-circle">点击【{{$d->view}}】</span>
                                 <div class="look-all pull-right ">
                                     <a href="{{url('home/article/'.$d->id)}}" class="button border-blue" role="button">查看详细</a>
                                 </div>

@@ -1,23 +1,20 @@
 @extends('layouts.home.header')
 @section('info')
-    {{--<title>{{Config::get('web.web_title')}} - {{Config::get('web.seo_title')}}</title>--}}
-    {{--<meta name="keywords" content="{{Config::get('web.keywords')}}" />--}}
-    {{--<meta name="description" content="{{Config::get('web.description')}}" />--}}
-    <title>主页</title>
-    <meta name="keywords" content="主页" />
-    <meta name="description" content="主页" />
+    <title>{{Config::get('web_config.web_title')}} - {{Config::get('web_config.web_message')}}</title>
+    <meta name="keywords" content="{{Config::get('web_config.message_keywords')}}" />
+    <meta name="description" content="{{Config::get('web_config.message_description')}}" />
 @endsection
 @section('content')
 <div class="swiper-container banner" id="myCarousel">
     <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background: #223240">
-            <img src="images/slide1.png" alt="">
+        <div class="swiper-slide" style="background:rgb(110,149,153)">
+            <img src="{{asset('home/images/banner/banner1.png')}}" alt="">
         </div>
-        <div class="swiper-slide" style="background: #f4e3da">
-            <img src="images/slide2.png" alt="">
+        <div class="swiper-slide" style="background:rgb(184,183,162)">
+            <img src="{{asset('home/images/banner/banner2.png')}}" alt="">
         </div>
-        <div class="swiper-slide" style="background: #dd292c">
-            <img src="images/slide3.png" alt="">
+        <div class="swiper-slide" style="background-color:rgb(117,199,197)">
+            <img src="{{asset('home/images/banner/banner3.png')}}" alt="">
         </div>
     </div>
     <div class="swiper-pagination "></div>
@@ -27,8 +24,8 @@
 <div class="tab1">
     <div class="container">
         <ol class="breadcrumb chip qshang-box">
-            <li><a href="{{url('home/index')}}">首页</a></li>
-            <li class="active">留言板</li>
+            <li><a href="{{url('home/index')}}" class="glyphicon glyphicon-home">首页</a></li>
+            <li class="active"><span class=" glyphicon glyphicon-comment"></span> 留言板</li>
         </ol>
         <div class="row">
             {{--留言板--}}

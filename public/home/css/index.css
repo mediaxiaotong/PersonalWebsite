@@ -206,8 +206,17 @@ body {
 	background: url(../images/sign_3.png) no-repeat ;
 	bottom: 36px;
 }
-.section{
-	background-image:url(../images/beijing.gif);
+.section1{
+	background-image:url(../images/big/big1.jpg);
+}
+.section2{
+	background-image:url(../images/big/big2.jpg);
+}
+.section3{
+	background-image:url(../images/big/big3.jpg);
+}
+.section4{
+	background-image:url(../images/big/big4.jpg);
 }
 .section1 h1{
 	font-size:40px;
@@ -436,8 +445,8 @@ body {
 }
 
 .qshang-title a{
-  font-size: 16px;
-  color:#333;
+  font-size: 14px;
+  color:grey;
 }
 .qshang-title a:hover{
   color:#f03573;
@@ -480,8 +489,19 @@ body {
 .look-all a {
     color: #f03573;
 }
-.jja a {
-    color: #666;
+.jja{
+	font-size: 14px;
+	text-indent: 2.5em;
+	line-height: 25px;
+	padding: 15px;
+}
+.jja a{
+	color:grey;
+	letter-spacing:0.1em;
+}
+.jja a:hover{
+	color:#f03573;
+	text-decoration:none;
 }
 .arBox{
 	text-align:center;

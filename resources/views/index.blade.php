@@ -12,7 +12,7 @@
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/animate.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/jquery.fullPage.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/index.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('home/css/base.css')}}" />
+    {{--<link rel="stylesheet" type="text/css" href="{{asset('home/css/base.css')}}" />--}}
 </head>
 <body>
 <div class="navbar navbar-default navbar-fixed-top navbar-qshang hidden-xs">
@@ -88,10 +88,12 @@
                             </div>
                             <div class="col qshang-info">
                                 <span class="glyphicon glyphicon-time"></span>
-                                {{$n->created_at}}&nbsp;&nbsp;分类：[&nbsp;{{$n->category->name}}&nbsp; ]
-                                <span class="hidden-xs">点击：{{$n->view}}</span>
+                                时间【{{$n->created_at}}】&nbsp;&nbsp;
+                                <span class="glyphicon glyphicon-edit"></span>
+                                分类【{{$n->category->name}}】
+                                <span class="hidden-xs glyphicon glyphicon-play-circle">点击【{{$n->view}}】</span>
                                 <div class="look-all pull-right ">
-                                    <a href="{{url('/home/article/'.$n->id)}}" class="button border-blue" role="button">查看详细</a>
+                                    <a href="{{url('home/article/'.$n->id)}}" class="button border-blue" role="button">查看详细</a>
                                 </div>
                             </div>
                         </div>
