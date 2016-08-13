@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CreateNavRequest;
-use App\Http\Requests\UpdateNavRequest;
+use App\Http\Requests\Admin\CreateNavRequest;
+use App\Http\Requests\Admin\UpdateNavRequest;
 use App\Model\Nav;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;

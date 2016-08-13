@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CreateArticleRequest;
-use App\Http\Requests\UpdateArticleRequest;
+use App\Http\Requests\Admin\CreateArticleRequest;
+use App\Http\Requests\Admin\UpdateArticleRequest;
 use App\Model\Article;
 use App\Model\Category;
 use Illuminate\Http\Request;

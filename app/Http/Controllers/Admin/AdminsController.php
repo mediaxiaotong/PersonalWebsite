@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\UpdatePassRequest;
+
+use App\Http\Requests\Admin\UpdatePassRequest;
 use App\Model\Admin;
 use Illuminate\Support\Facades\Crypt;
 

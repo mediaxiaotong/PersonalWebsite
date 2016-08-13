@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Requests\CreateLinkRequest;
-use App\Http\Requests\UpdateLinkRequest;
+use App\Http\Requests\Admin\CreateLinkRequest;
+use App\Http\Requests\Admin\UpdateLinkRequest;
 use App\Model\Category;
 use App\Model\Link;
 use Illuminate\Http\Request;

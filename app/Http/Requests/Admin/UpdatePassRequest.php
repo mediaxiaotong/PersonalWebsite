@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
-class CreateNavRequest extends Request
+class UpdatePassRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class CreateNavRequest extends Request
     public function rules()
     {
         return [
-            'name'=>'required',
-            'url'=>'required',
+            'password_o' => 'required',
+            'password' => 'required|between:6,20|confirmed',
         ];
     }
 
@@ -33,8 +33,10 @@ class CreateNavRequest extends Request
     public function messages()
     {
         return [
-            'name.required'=>'自定义导航名称不能为空！',
-            'url.required'=>'自定义导航URL不能为空！',
+            'password_o.required'=>'原密码不能为空',
+            'password.required'=>'新密码密码不能为空',
+            'password.between'=>'新密码必须在6-20位之间',
+            'password.confirmed'=>'新密码密码不能为空',
         ];
     }
 }

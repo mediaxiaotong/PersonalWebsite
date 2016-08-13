@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Admin;
 
 use App\Http\Requests\Request;
 
-class UpdateArticleRequest extends Request
+class CreateLinkRequest extends Request
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,8 +24,8 @@ class UpdateArticleRequest extends Request
     public function rules()
     {
         return [
-            'title' => 'required',
-            'content' => 'required',
+            'name' => 'required',
+            'url' => 'required',
         ];
     }
 
@@ -33,8 +33,8 @@ class UpdateArticleRequest extends Request
     public function messages()
     {
         return [
-            'title.required'=>'文章标题不能为空',
-            'content.required'=>'文章内容不能为空',
+            'name.required' => '链接名称不能为空!',
+            'url.required' => 'URL不能为空',
         ];
     }
 }
