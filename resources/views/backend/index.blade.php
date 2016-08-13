@@ -1,4 +1,4 @@
-@extends('layouts.admin.header')
+@extends('layouts.backend')
 @section('content')
 		<!--头部 开始-->
 <div class="top_box">

@@ -1,4 +1,4 @@
-@extends('layouts.home.header')
+@extends('layouts.frontend')
 @section('info')
     <title>{{Config::get('web_config.web_title')}} - {{Config::get('web_config.seo_title')}}</title>
     <meta name="keywords" content="{{Config::get('web_config.keywords')}}" />

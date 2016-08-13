@@ -1,4 +1,4 @@
-@extends('layouts.admin.header')
+@extends('layouts.backend')
 @section('content')
     <!--面包屑导航 开始-->
 <div class="crumb_warp">

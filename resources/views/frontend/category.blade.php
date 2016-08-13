@@ -1,4 +1,4 @@
-@extends('layouts.home.header')
+@extends('layouts.frontend')
 @section('info')
     <title>{{$field->name}} - {{Config::get('web_config.web_title')}}</title>
     <meta name="keywords" content="{{$field->keyword}}" />

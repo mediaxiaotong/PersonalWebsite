@@ -1,4 +1,4 @@
-@extends('layouts.home.header')
+@extends('layouts.frontend')
 @section('content')
     <div class="swiper-container banner" id="myCarousel">
         <div class="swiper-wrapper">
