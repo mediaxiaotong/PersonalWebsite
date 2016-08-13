@@ -12,14 +12,14 @@
 */
 
 //进入网站前台大屏显示，还在加工中
-Route::get('/', 'Home\IndexController@wecome');
+Route::get('/', 'Frontend\IndexController@welcome');
 
 /*
  *
 网站后台路由
 */
 //后台管理员登陆路由
-Route::group(['prefix'=>'admin','namespace'=>'Admin'], function (){
+Route::group(['prefix'=>'backend','namespace'=>'Backend'], function (){
     /*
     网站后台路由
     */
@@ -35,9 +35,9 @@ Route::group(['prefix'=>'admin','namespace'=>'Admin'], function (){
 });
 
 //后台管理员路由
-Route::group(['middleware' => ['admin.login'],'prefix'=>'admin','namespace'=>'Admin'], function () {
+Route::group(['middleware' => ['admin.login'],'prefix'=>'backend','namespace'=>'Backend'], function () {
     //主页路由
-    Route::get('index', 'IndexController@index');
+    Route::get('/', 'IndexController@index');
     Route::get('info', 'IndexController@info');
     Route::get('quit', 'IndexController@quit');
     //修改密码
@@ -69,7 +69,7 @@ Route::group(['middleware' => ['admin.login'],'prefix'=>'admin','namespace'=>'Ad
 });
 
 //前台路由
-Route::group(['prefix'=>'home','namespace'=>'Home'], function (){
+Route::group(['namespace'=>'Frontend'], function (){
     /*
     网站前台路由
     */
@@ -91,7 +91,7 @@ Route::group(['prefix'=>'home','namespace'=>'Home'], function (){
     Route::post('login', 'UserAuthController@login');
 
 });
-Route::group(['middleware' => ['user.login'],'prefix'=>'home','namespace'=>'Home'], function () {
+Route::group(['middleware' => ['user.login'],'namespace'=>'Frontend'], function () {
     //退出登录路由
     Route::get('/quit', 'UserAuthController@quit');
     Route::post('message', 'MessageController@message');

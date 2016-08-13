@@ -17,7 +17,7 @@ class AdminLogin
     {
         if(session('isAdmin') != 1)
         {
-            return redirect('admin/login');
+            return redirect('backend/login');
         }
         return $next($request);
     }
