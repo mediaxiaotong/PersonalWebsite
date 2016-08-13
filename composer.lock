@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "5367642c6b10e70744d91d32277a242d",
-    "content-hash": "5c6aeee7d11f29e4e738f5558814263c",
+    "hash": "8ad2625b3a5306ef1964eddb60429c50",
+    "content-hash": "0feb6af5bef0e094e776fba476c27e7c",
     "packages": [
         {
             "name": "classpreloader/classpreloader",
@@ -435,6 +435,60 @@
                 "laravel"
             ],
             "time": "2016-08-10 12:23:59"
+        },
+        {
+            "name": "laravelcollective/html",
+            "version": "v5.2.4",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/LaravelCollective/html.git",
+                "reference": "3a312d39ffe37da0f57b602618b61fd07c1fcec5"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://packagist.phpcomposer.com/files/LaravelCollective/html/3a312d39ffe37da0f57b602618b61fd07c1fcec5.zip",
+                "reference": "3a312d39ffe37da0f57b602618b61fd07c1fcec5",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "5.2.*",
+                "illuminate/routing": "5.2.*",
+                "illuminate/session": "5.2.*",
+                "illuminate/support": "5.2.*",
+                "illuminate/view": "5.2.*",
+                "php": ">=5.5.9"
+            },
+            "require-dev": {
+                "illuminate/database": "5.2.*",
+                "mockery/mockery": "~0.9",
+                "phpunit/phpunit": "~4.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Collective\\Html\\": "src/"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                },
+                {
+                    "name": "Adam Engebretson",
+                    "email": "adam@laravelcollective.com"
+                }
+            ],
+            "description": "HTML and Form Builders for the Laravel Framework",
+            "homepage": "http://laravelcollective.com",
+            "time": "2016-01-27 22:29:54"
         },
         {
             "name": "league/flysystem",
@@ -896,104 +950,6 @@
                 "shell"
             ],
             "time": "2016-03-09 05:03:14"
-        },
-        {
-            "name": "qiniu/php-sdk",
-            "version": "v7.0.8",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/qiniu/php-sdk.git",
-                "reference": "d1bca450b56d85beb7ba21f374a47bfeb59c288b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/qiniu/php-sdk/d1bca450b56d85beb7ba21f374a47bfeb59c288b.zip",
-                "reference": "d1bca450b56d85beb7ba21f374a47bfeb59c288b",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.3"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "~4.0",
-                "squizlabs/php_codesniffer": "~2.3"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Qiniu\\": "src/Qiniu"
-                },
-                "files": [
-                    "src/Qiniu/functions.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Qiniu",
-                    "email": "sdk@qiniu.com",
-                    "homepage": "http://www.qiniu.com"
-                }
-            ],
-            "description": "Qiniu Resource (Cloud) Storage SDK for PHP",
-            "homepage": "http://developer.qiniu.com/",
-            "keywords": [
-                "cloud",
-                "qiniu",
-                "sdk",
-                "storage"
-            ],
-            "time": "2016-07-19 06:18:08"
-        },
-        {
-            "name": "stevenyangecho/laravel-u-editor",
-            "version": "v1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/stevenyangecho/laravel-u-editor.git",
-                "reference": "1868b64e3bdc07378b7200a1560713e9a030a92b"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://packagist.phpcomposer.com/files/stevenyangecho/laravel-u-editor/1868b64e3bdc07378b7200a1560713e9a030a92b.zip",
-                "reference": "1868b64e3bdc07378b7200a1560713e9a030a92b",
-                "shasum": ""
-            },
-            "require": {
-                "ext-fileinfo": "*",
-                "illuminate/support": "5.*",
-                "php": ">=5.4.0",
-                "qiniu/php-sdk": "7.*"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Stevenyangecho\\UEditor\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Steven Yang",
-                    "email": "yqmking@163.com"
-                }
-            ],
-            "description": "UEditor for laravel5. Support i18n. UEditor is a Rich Text Web Editor From Baidu.",
-            "keywords": [
-                "laravel",
-                "laravel-u-editor",
-                "laravel5 web text editor",
-                "steven yang",
-                "stevenyangecho",
-                "ueditor"
-            ],
-            "time": "2016-01-22 07:28:21"
         },
         {
             "name": "swiftmailer/swiftmailer",
