@@ -13,7 +13,7 @@ class AdminsController extends CommonController
     //更改密码
     public function index()
     {
-        return view('admin.pass');
+        return view('backend.pass');
     }
     public function pass(UpdatePassRequest $request)
     {

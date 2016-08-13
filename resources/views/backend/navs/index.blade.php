@@ -3,7 +3,7 @@
         <!--面包屑导航 开始-->
 <div class="crumb_warp">
     <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-    <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; 自定义导航管理
+    <i class="fa fa-home"></i> <a href="{{url('backend/info')}}">首页</a> &raquo; 自定义导航管理
 </div>
 <!--面包屑导航 结束-->
 
@@ -38,8 +38,8 @@
         <!--快捷导航 开始-->
         <div class="result_content">
             <div class="short_wrap">
-                <a href="{{url('admin/nav/create')}}"><i class="fa fa-plus"></i>添加导航</a>
-                <a href="{{url('admin/nav')}}"><i class="fa fa-recycle"></i>全部导航</a>
+                <a href="{{url('backend/nav/create')}}"><i class="fa fa-plus"></i>添加导航</a>
+                <a href="{{url('backend/nav')}}"><i class="fa fa-recycle"></i>全部导航</a>
             </div>
         </div>
         <!--快捷导航 结束-->
@@ -67,7 +67,7 @@
                     </td>
                     <td>{{$v->url}}</td>
                     <td>
-                        <a href="{{url('admin/nav/'.$v->id.'/edit')}}">修改</a>
+                        <a href="{{url('backend/nav/'.$v->id.'/edit')}}">修改</a>
                         <a href="javascript:;" onclick="delLinks({{$v->id}})">删除</a>
                     </td>
                 </tr>
@@ -82,7 +82,7 @@
 <script>
     function changeOrder(obj,id){
         var order = $(obj).val();
-        $.post("{{url('admin/nav/changeorder')}}",{'_token':'{{csrf_token()}}','id':id,'order':order},function(data){
+        $.post("{{url('backend/nav/changeorder')}}",{'_token':'{{csrf_token()}}','id':id,'order':order},function(data){
             if(data.status == 0){
                 layer.msg(data.msg, {icon: 6});
             }else{
@@ -96,7 +96,7 @@
         layer.confirm('您确定要删除这个导航吗？', {
             btn: ['确定','取消'] //按钮
         }, function(){
-            $.post("{{url('admin/nav/')}}/"+id,{'_method':'delete','_token':"{{csrf_token()}}"},function (data) {
+            $.post("{{url('backend/nav/')}}/"+id,{'_method':'delete','_token':"{{csrf_token()}}"},function (data) {
                 if(data.status==0){
                     layer.msg(data.msg, {icon: 6});
                     location.href = location.href;

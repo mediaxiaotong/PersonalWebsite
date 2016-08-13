@@ -8,13 +8,13 @@
 <div class="swiper-container banner" id="myCarousel">
     <div class="swiper-wrapper">
         <div class="swiper-slide" style="background:rgb(110,149,153)">
-            <img src="{{asset('home/images/banner/banner1.png')}}" alt="">
+            <img src="{{asset('frontend/images/banner/banner1.png')}}" alt="">
         </div>
         <div class="swiper-slide" style="background:rgb(184,183,162)">
-            <img src="{{asset('home/images/banner/banner2.png')}}" alt="">
+            <img src="{{asset('frontend/images/banner/banner2.png')}}" alt="">
         </div>
         <div class="swiper-slide" style="background-color:rgb(117,199,197)">
-            <img src="{{asset('home/images/banner/banner3.png')}}" alt="">
+            <img src="{{asset('frontend/images/banner/banner3.png')}}" alt="">
         </div>
     </div>
     <div class="swiper-pagination "></div>
@@ -24,7 +24,7 @@
 <div class="tab1">
     <div class="container">
         <ol class="breadcrumb chip qshang-box">
-            <li><a href="{{url('home/index')}}" class="glyphicon glyphicon-home">首页</a></li>
+            <li><a href="{{url('frontend/index')}}" class="glyphicon glyphicon-home">首页</a></li>
             <li class="active"><span class=" glyphicon glyphicon-comment"></span> 留言板</li>
         </ol>
         <div class="row">
@@ -49,7 +49,7 @@
 
                     <div class="alert alert-success liuyanTip" role="alert"><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                         <strong>温馨提示：</strong>请文明留言，</div>
-                    <form action="{{url('home/message')}}" method="post" class="form-inline" id="LiuForm">
+                    <form action="{{url('frontend/message')}}" method="post" class="form-inline" id="LiuForm">
                         {{csrf_field()}}
                         <textarea name="content" id="myEditor" style="width:100%;height:120px;" rows="5" name="content" cols="50"></textarea>
                         <input type="submit" value="提交" id="btn-submit" class="btn btn-default message-btn pull-right">

@@ -43,7 +43,7 @@ class LoginController extends CommonController
                 {
                     Session::put('isAdmin',1);
                     Session::put('adminName',$admin->name);
-                    return redirect('backend/index');
+                    return redirect('backend');
                 }
             }
             //如果没找到对应用户或者用户输入信息出错,就退回

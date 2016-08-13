@@ -1,5 +1,5 @@
-@extends('layouts.app');
+@extends('layouts.app')
 
-@section('container');
-	
+@section('container')
+	@yield('content')
 @endsection

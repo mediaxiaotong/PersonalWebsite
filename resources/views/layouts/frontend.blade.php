@@ -6,9 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <link rel="shortcut icon" href="{{asset('home/images/icon.ico')}}" type="image/x-icon">
     @yield('info')
-    <link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('home/css/animate.min.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('extend/umeditor/themes/default/css/umeditor.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/swiper.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/base.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/page.css')}}" />

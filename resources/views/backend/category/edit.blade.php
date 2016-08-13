@@ -3,7 +3,7 @@
     <!--面包屑导航 开始-->
     <div class="crumb_warp">
         <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; 编辑文章分类
+        <i class="fa fa-home"></i> <a href="{{url('backend/info')}}">首页</a> &raquo; 编辑文章分类
     </div>
     <!--面包屑导航 结束-->
 
@@ -25,15 +25,15 @@
         </div>
         <div class="result_content">
             <div class="short_wrap">
-                <a href="{{url('admin/category/create')}}"><i class="fa fa-plus"></i>添加分类</a>
-                <a href="{{url('admin/category')}}"><i class="fa fa-recycle"></i>全部分类</a>
+                <a href="{{url('backend/category/create')}}"><i class="fa fa-plus"></i>添加分类</a>
+                <a href="{{url('backend/category')}}"><i class="fa fa-recycle"></i>全部分类</a>
             </div>
         </div>
     </div>
     <!--结果集标题与导航组件 结束-->
     
     <div class="result_wrap">
-        <form action="{{url('admin/category/'.$field->id)}}" method="post">
+        <form action="{{url('backend/category/'.$field->id)}}" method="post">
             <input type="hidden" name="_method" value="put">
             {{csrf_field()}}
             <table class="add_tab">

@@ -3,7 +3,7 @@
         <!--面包屑配置项 开始-->
 <div class="crumb_warp">
     <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-    <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; 配置项管理
+    <i class="fa fa-home"></i> <a href="{{url('backend/info')}}">首页</a> &raquo; 配置项管理
 </div>
 <!--面包屑配置项 结束-->
 
@@ -48,8 +48,8 @@
         <!--快捷配置项 开始-->
         <div class="result_content">
             <div class="short_wrap">
-                <a href="{{url('admin/config/create')}}"><i class="fa fa-plus"></i>添加配置项</a>
-                <a href="{{url('admin/config')}}"><i class="fa fa-recycle"></i>全部配置项</a>
+                <a href="{{url('backend/config/create')}}"><i class="fa fa-plus"></i>添加配置项</a>
+                <a href="{{url('backend/config')}}"><i class="fa fa-recycle"></i>全部配置项</a>
             </div>
         </div>
         <!--快捷配置项 结束-->
@@ -57,7 +57,7 @@
 
     <div class="result_wrap">
         <div class="result_content">
-            <form action="{{url('admin/config/changecontent')}}" method="post">
+            <form action="{{url('backend/config/changecontent')}}" method="post">
                 {{csrf_field()}}
             <table class="list_tab">
                 <tr>
@@ -84,7 +84,7 @@
                         {!! $v->_html !!}
                     </td>
                     <td>
-                        <a href="{{url('admin/config/'.$v->id.'/edit')}}">修改</a>
+                        <a href="{{url('backend/config/'.$v->id.'/edit')}}">修改</a>
                         <a href="javascript:;" onclick="delLinks({{$v->id}})">删除</a>
                     </td>
                 </tr>
@@ -102,7 +102,7 @@
 <script>
     function changeOrder(obj,id){
         var order = $(obj).val();
-        $.post("{{url('admin/config/changeorder')}}",{'_token':'{{csrf_token()}}','id':id,'order':order},function(data){
+        $.post("{{url('backend/config/changeorder')}}",{'_token':'{{csrf_token()}}','id':id,'order':order},function(data){
             if(data.status == 0){
                 layer.msg(data.msg, {icon: 6});
             }else{
@@ -116,7 +116,7 @@
         layer.confirm('您确定要删除这个配置项吗？', {
             btn: ['确定','取消'] //按钮
         }, function(){
-            $.post("{{url('admin/config/')}}/"+id,{'_method':'delete','_token':"{{csrf_token()}}"},function (data) {
+            $.post("{{url('backend/config/')}}/"+id,{'_method':'delete','_token':"{{csrf_token()}}"},function (data) {
                 if(data.status==0){
                     layer.msg(data.msg, {icon: 6});
                     location.href = location.href;

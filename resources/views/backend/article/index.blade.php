@@ -3,7 +3,7 @@
     <!--面包屑导航 开始-->
     <div class="crumb_warp">
         <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; 文章管理
+        <i class="fa fa-home"></i> <a href="{{url('backend/info')}}">首页</a> &raquo; 文章管理
     </div>
     <!--面包屑导航 结束-->
 
@@ -16,8 +16,8 @@
             </div>
             <div class="result_content">
                 <div class="short_wrap">
-                    <a href="{{url('admin/article/create')}}"><i class="fa fa-plus"></i>添加文章</a>
-                    <a href="{{url('admin/article')}}"><i class="fa fa-recycle"></i>全部文章</a>
+                    <a href="{{url('backend/article/create')}}"><i class="fa fa-plus"></i>添加文章</a>
+                    <a href="{{url('backend/article')}}"><i class="fa fa-recycle"></i>全部文章</a>
                 </div>
             </div>
             <!--快捷导航 结束-->
@@ -44,7 +44,7 @@
                             <td>{{$v->editor}}</td>
                             <td>{{$v->updated_at}}</td>
                             <td>
-                                <a href="{{url('admin/article/'.$v->id.'/edit')}}">修改</a>
+                                <a href="{{url('backend/article/'.$v->id.'/edit')}}">修改</a>
                                 <a href="javascript:;" onclick="delArt({{$v->id}})">删除</a>
                             </td>
                         </tr>
@@ -72,7 +72,7 @@
             layer.confirm('您确定要删除这篇文章吗？', {
                 btn: ['确定','取消'] //按钮
             }, function(){
-                $.post("{{url('admin/article/')}}/"+id,{'_method':'delete','_token':"{{csrf_token()}}"},function (data) {
+                $.post("{{url('backend/article/')}}/"+id,{'_method':'delete','_token':"{{csrf_token()}}"},function (data) {
                     if(data.status==0){
                         location.href = location.href;
                         layer.msg(data.msg, {icon: 6});

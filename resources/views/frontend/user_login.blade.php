@@ -40,7 +40,7 @@
 
                                     <div class="space-6"></div>
 
-                                    <form action="{{url('home/login')}}" method="post">
+                                    <form action="{{url('backend/login')}}" method="post">
                                         {{csrf_field()}}
                                         <fieldset>
                                             <label class="block clearfix">
@@ -99,13 +99,13 @@
                                 <div class="toolbar clearfix">
                                     {{--找回密码暂未制作--}}
                                     {{--<div>--}}
-                                        {{--<a href="{{url('home/index')}}" data-target="#forgot-box" class="forgot-password-link">--}}
+                                        {{--<a href="{{url('backend/index')}}" data-target="#forgot-box" class="forgot-password-link">--}}
                                             {{--<i class="ace-icon fa fa-arrow-left"></i>--}}
                                             {{--找回密码--}}
                                         {{--</a>--}}
                                     {{--</div>--}}
                                     <div>
-                                        <a href="{{url('home/index')}}" class="forgot-password-link">
+                                        <a href="{{url('backend/index')}}" class="forgot-password-link">
                                             <i class="ace-icon fa fa-arrow-left"></i>
                                             返回主页
                                         </a>
@@ -173,7 +173,7 @@
                                     <div class="space-6"></div>
                                     <p>填写信息: </p>
 
-                                    <form action="{{url('home/register')}}" method="post">
+                                    <form action="{{url('backend/register')}}" method="post">
                                         {{csrf_field()}}
                                         <fieldset>
                                             <label class="block clearfix">

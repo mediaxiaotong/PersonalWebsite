@@ -3,7 +3,7 @@
     <!--面包屑导航 开始-->
     <div class="crumb_warp">
         <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; 友情链接管理
+        <i class="fa fa-home"></i> <a href="{{url('backend/info')}}">首页</a> &raquo; 友情链接管理
     </div>
     <!--面包屑导航 结束-->
 
@@ -18,8 +18,8 @@
             </div>
             <div class="result_content">
                 <div class="short_wrap">
-                    <a href="{{url('admin/link/create')}}"><i class="fa fa-plus"></i>添加链接</a>
-                    <a href="{{url('admin/link')}}"><i class="fa fa-recycle"></i>全部链接</a>
+                    <a href="{{url('backend/link/create')}}"><i class="fa fa-plus"></i>添加链接</a>
+                    <a href="{{url('backend/link')}}"><i class="fa fa-recycle"></i>全部链接</a>
                 </div>
             </div>
             <!--快捷导航 结束-->
@@ -48,7 +48,7 @@
                         <td>{{$v->title}}</td>
                         <td>{{$v->url}}</td>
                         <td>
-                            <a href="{{url('admin/link/'.$v->id.'/edit')}}">修改</a>
+                            <a href="{{url('backend/link/'.$v->id.'/edit')}}">修改</a>
                             <a href="javascript:;" onclick="delLinks({{$v->id}})">删除</a>
                         </td>
                     </tr>
@@ -62,7 +62,7 @@
     function changeOrder(obj,id)
     {
         var link_order = $(obj).val();
-        $.post('{{url('admin/link/changeorder')}}',{'_token':'{{csrf_token()}}','link_id':id,'link_order':link_order},function (data) {
+        $.post('{{url('backend/link/changeorder')}}',{'_token':'{{csrf_token()}}','link_id':id,'link_order':link_order},function (data) {
             if(data.status == 0)
             {
                 layer.msg(data.msg,{icon:6})
@@ -81,7 +81,7 @@
         layer.confirm('您确定要删除这个链接吗？', {
             btn: ['确定','取消'] //按钮
         }, function(){
-            $.post("{{url('admin/link')}}/"+id,{'_method':'delete','_token':"{{csrf_token()}}"},function (data) {
+            $.post("{{url('backend/link')}}/"+id,{'_method':'delete','_token':"{{csrf_token()}}"},function (data) {
                 if(data.status == 0)
                 {
                     location.href = location.href;

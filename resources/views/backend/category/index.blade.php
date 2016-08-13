@@ -3,7 +3,7 @@
     <!--面包屑导航 开始-->
     <div class="crumb_warp">
         <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-        <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; 全部分类
+        <i class="fa fa-home"></i> <a href="{{url('backend/info')}}">首页</a> &raquo; 全部分类
     </div>
     <!--面包屑导航 结束-->
 
@@ -18,8 +18,8 @@
             </div>
             <div class="result_content">
                 <div class="short_wrap">
-                    <a href="{{url('admin/category/create')}}"><i class="fa fa-plus"></i>添加分类</a>
-                    <a href="{{url('admin/category')}}"><i class="fa fa-recycle"></i>全部分类</a>
+                    <a href="{{url('backend/category/create')}}"><i class="fa fa-plus"></i>添加分类</a>
+                    <a href="{{url('backend/category')}}"><i class="fa fa-recycle"></i>全部分类</a>
                 </div>
             </div>
             <!--快捷导航 结束-->
@@ -48,7 +48,7 @@
                         <td>{{$v->title}}</td>
                         <td>{{$v->view}}</td>
                         <td>
-                            <a href="{{url('admin/category/'.$v->id.'/edit')}}">修改</a>
+                            <a href="{{url('backend/category/'.$v->id.'/edit')}}">修改</a>
                             <a href="javascript:;" onclick="delCate({{$v->id}})">删除</a>
                         </td>
                     </tr>
@@ -74,7 +74,7 @@
     function changeOrder(obj,id)
     {
         var order = $(obj).val();
-        $.post('{{url('admin/cate/changeorder')}}',{'_token':'{{csrf_token()}}','id':id,'order':order},function (data) {
+        $.post('{{url('backend/cate/changeorder')}}',{'_token':'{{csrf_token()}}','id':id,'order':order},function (data) {
             if(data.status == 0)
             {
                 layer.msg(data.msg,{icon:6})
@@ -93,7 +93,7 @@
         layer.confirm('您确定要删除这个分类吗？', {
             btn: ['确定','取消'] //按钮
         }, function(){
-            $.post("{{url('admin/category')}}/"+id,{'_method':'delete','_token':"{{csrf_token()}}"},function (data) {
+            $.post("{{url('backend/category')}}/"+id,{'_method':'delete','_token':"{{csrf_token()}}"},function (data) {
                 if(data.status == 0)
                 {
                     location.href = location.href;

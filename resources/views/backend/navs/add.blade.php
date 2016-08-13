@@ -3,7 +3,7 @@
         <!--面包屑导航 开始-->
 <div class="crumb_warp">
     <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-    <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; 自定义导航管理
+    <i class="fa fa-home"></i> <a href="{{url('backend/info')}}">首页</a> &raquo; 自定义导航管理
 </div>
 <!--面包屑导航 结束-->
 
@@ -25,15 +25,15 @@
     </div>
     <div class="result_content">
         <div class="short_wrap">
-            <a href="{{url('admin/nav/create')}}"><i class="fa fa-plus"></i>添加导航</a>
-            <a href="{{url('admin/nav')}}"><i class="fa fa-recycle"></i>全部导航</a>
+            <a href="{{url('backend/nav/create')}}"><i class="fa fa-plus"></i>添加导航</a>
+            <a href="{{url('backend/nav')}}"><i class="fa fa-recycle"></i>全部导航</a>
         </div>
     </div>
 </div>
 <!--结果集标题与导航组件 结束-->
 
 <div class="result_wrap">
-    <form action="{{url('admin/nav')}}" method="post">
+    <form action="{{url('backend/nav')}}" method="post">
         {{csrf_field()}}
         <table class="add_tab">
             <tbody>

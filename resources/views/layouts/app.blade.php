@@ -12,7 +12,7 @@
 </head>
 <body>
 
-@yield('container');
+@yield('container')
 
 <script type="text/javascript" src="{{asset('js/libs.js')}}"></script>
 

@@ -3,7 +3,7 @@
         <!--面包屑配置项 开始-->
 <div class="crumb_warp">
     <!--<i class="fa fa-bell"></i> 欢迎使用登陆网站后台，建站的首选工具。-->
-    <i class="fa fa-home"></i> <a href="{{url('admin/info')}}">首页</a> &raquo; 配置项管理
+    <i class="fa fa-home"></i> <a href="{{url('backend/info')}}">首页</a> &raquo; 配置项管理
 </div>
 <!--面包屑配置项 结束-->
 
@@ -25,15 +25,15 @@
     </div>
     <div class="result_content">
         <div class="short_wrap">
-            <a href="{{url('admin/config/create')}}"><i class="fa fa-plus"></i>添加配置项</a>
-            <a href="{{url('admin/config')}}"><i class="fa fa-recycle"></i>全部配置项</a>
+            <a href="{{url('backend/config/create')}}"><i class="fa fa-plus"></i>添加配置项</a>
+            <a href="{{url('backend/config')}}"><i class="fa fa-recycle"></i>全部配置项</a>
         </div>
     </div>
 </div>
 <!--结果集标题与配置项组件 结束-->
 
 <div class="result_wrap">
-    <form action="{{url('admin/config/'.$field->id)}})}}" method="post">
+    <form action="{{url('backend/config/'.$field->id)}})}}" method="post">
         {{method_field('PUT')}}
         {{csrf_field()}}
         <table class="add_tab">

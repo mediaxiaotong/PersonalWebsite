@@ -24,8 +24,8 @@
     <div class="tab1">
         <div class="container">
             <ol class="breadcrumb chip qshang-box">
-                <li><a href="{{url('home/index')}}" class="glyphicon glyphicon-home">首页</a></li>
-                <li><a href="{{url('home/category/'.$cate->id)}}" class="glyphicon glyphicon-align-justify">{{$cate->name}}</a></li>
+                <li><a href="{{url('frontend/index')}}" class="glyphicon glyphicon-home">首页</a></li>
+                <li><a href="{{url('frontend/category/'.$cate->id)}}" class="glyphicon glyphicon-align-justify">{{$cate->name}}</a></li>
                 <li class="active"><span class="glyphicon glyphicon-tower"></span> 文章正文</li>
             </ol>
             <div class="line-big">
@@ -77,7 +77,7 @@
                         <div class="a-up" >
                                  <p>上一篇：
                                 @if($article['pre'])
-                                    <a title="{{$article['pre']->title}}" href="{{url('home/article/'.$article['pre']->id)}}">{{$article['pre']->title}}</a>
+                                    <a title="{{$article['pre']->title}}" href="{{url('frontend/article/'.$article['pre']->id)}}">{{$article['pre']->title}}</a>
                                 </p>
                                 @else
                                     <span>没有上一篇了</span>
@@ -86,7 +86,7 @@
                         <div class="a-down">
                             <p>下一篇：
                                 @if($article['next'])
-                                    <a title="{{$article['next']->title}}" href="{{url('home/article/'.$article['next']->id)}}" >{{$article['next']->title}}</a>
+                                    <a title="{{$article['next']->title}}" href="{{url('frontend/article/'.$article['next']->id)}}" >{{$article['next']->title}}</a>
 
                             </p>
                                  @else
