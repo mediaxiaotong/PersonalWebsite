@@ -11,7 +11,7 @@ use App\Http\Requests;
 
 class IndexController extends CommonController
 {
-    public function wecome()
+    public function welcome()
     {
         $cate = Category::orderBy('order','asc')->get();
         $art = Article::orderBy('view','desc')->take(2)->get();

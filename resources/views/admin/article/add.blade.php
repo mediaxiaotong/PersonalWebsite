@@ -128,24 +128,17 @@
                     <tr>
                         <th>文章内容：</th>
                         <td>
-                            <script type="text/javascript" charset="utf-8" src="{{asset('extend/ueditor/ueditor.config.js')}}"></script>
-                            <script type="text/javascript" charset="utf-8" src="{{asset('extend/ueditor/ueditor.all.min.js')}}"> </script>
-                            <!--建议手动加在语言，避免在ie下有时因为加载语言失败导致编辑器加载失败-->
-                            <!--这里加载的语言文件会覆盖你在配置项目里添加的语言类型，比如你在配置项目里配置的是英文，这里加载的中文，那最后就是中文-->
-                            <script type="text/javascript" charset="utf-8" src="{{asset('extend/ueditor/lang/zh-cn/zh-cn.js')}}"></script>
-
-                            <script id="editor" name="content" type="text/plain" style="width:760px;height:300px;"></script>
-                            <script type="text/javascript">
-                                //实例化编辑器
-                                //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
-                                var ue = UE.getEditor('editor');
+                            <!-- 加载编辑器的容器 -->
+                            <script id="container" name="content" type="text/plain">
+                            这里写你的初始化内容
                             </script>
-                            <style>
-                                .edui-default{line-height: 28px;}
-                                div.edui-combox-body,div.edui-button-body,div.edui-splitbutton-body
-                                {overflow: hidden; height:20px;}
-                                div.edui-box{overflow: hidden; height:22px;}
-                            </style>
+                            <!-- 实例化编辑器 -->
+                            <script type="text/javascript">
+                                var ue = UE.getEditor('container');
+                                ue.ready(function() {
+                                    ue.execCommand('serverparam', '_token', '{{ csrf_token() }}');//此处为支持laravel5 csrf ,根据实际情况修改,目的就是设置 _token 值.
+                                });
+                            </script>
                         </td>
                     </tr>
 

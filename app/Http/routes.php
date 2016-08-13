@@ -12,7 +12,7 @@
 */
 
 //进入网站前台大屏显示，还在加工中
-Route::get('/', 'Home\IndexController@wecome');
+Route::get('/', 'Home\IndexController@welcome');
 
 /*
  *

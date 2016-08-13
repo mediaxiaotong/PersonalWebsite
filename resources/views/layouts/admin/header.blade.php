@@ -7,6 +7,8 @@
     <script type="text/javascript" src="{{asset('admin/js/jquery.js')}}"></script>
     <script type="text/javascript" src="{{asset('admin/js/ch-ui.admin.js')}}"></script>
     <script type="text/javascript" src="{{asset('admin/layer/layer.js')}}"></script>
+
+    @include('UEditor::head');
 </head>
 <body>
 @yield('content')

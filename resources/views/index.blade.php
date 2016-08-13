@@ -58,6 +58,7 @@
     </div>
     <div class="section section2">
         <div class="container">
+            @if(count($art)>0)
             <h1>最新文章</h1>
             <p class="fbt">闲来无事，把工作中的内容记录下来分享给大家，同时充实下博客内容</p>
             <div class="arBox">
@@ -99,6 +100,9 @@
                         </div>
                     </div>
                 @endforeach
+                @else
+                    <h1>暂无文章</h1>
+                @endif
             </div>
             <a class="btn_down" href="#page3">
                 <div class="sign signImg1"></div>

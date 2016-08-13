@@ -153,7 +153,7 @@ return [
         /*
          * Package Service Providers...
          */
-
+        Stevenyangecho\UEditor\UEditorServiceProvider::class,
 
         /*
          * Application Service Providers...
