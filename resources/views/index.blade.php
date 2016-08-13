@@ -37,9 +37,9 @@
             <p class="fbt">扁平化设计，响应式设计，适应全部设备，小童博客正式上线！</p>
             <div class="row applyBox">
                 <div class="midd col-md-6 col-xs-12">
-                    <img src="images/apply01.png" alt="手机响应">
-                    <img src="images/apply03.png" alt="平板响应" class="apply03">
-                    <img src="images/apply02.png" alt="PC响应" class="apply02">
+                    <img src="{{asset('home/images/response/pc.png')}}" alt="pc响应">
+                    <img src="{{asset('home/images/response/pad.png')}}" alt="pad响应" class="apply03">
+                    <img src="{{asset('home/images/response/phone.png')}}" alt="phone响应" class="apply02">
                 </div>
                 <div class="col-md-6 txt hidden-xs hidden-sm">
                     <p>小童博客，历时学习laravel5.2一个月时间，在2016年08月8日正式上线，包括文章，留言，相册，关于我，等4大模块，前端框架Bootstrap3.2，后台框架Laravel5.2，

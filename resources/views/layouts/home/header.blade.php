@@ -7,7 +7,6 @@
     <link rel="shortcut icon" href="{{asset('home/images/icon.ico')}}" type="image/x-icon">
     @yield('info')
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.min.css')}}" />
-    <link rel="stylesheet" href="{{asset('home/font/css/font-awesome.min.css')}}">
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/animate.min.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('extend/umeditor/themes/default/css/umeditor.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('home/css/swiper.css')}}" />
@@ -258,6 +257,6 @@
 <script src="{{asset('home/js/swiper.min.js')}}"></script>
 <script src="{{asset('home/js/base.js')}}"></script>
 <script src="{{asset('home/layer/layer.js')}}"></script>
-<script src="{{asset('home/layer/gotop.js')}}"></script>
+<script src="{{asset('home/js/gotop.js')}}"></script>
 </body>
 </html>
