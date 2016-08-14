@@ -5,23 +5,8 @@
     <meta name="description" content="{{Config::get('web_config.description')}}" />
 @endsection
 @section('content')
-<div class="swiper-container banner" id="myCarousel">
-    <div class="swiper-wrapper">
-        <div class="swiper-slide" style="background:rgb(110,149,153)">
-            <img src="{{asset('images/frontend/banner/banner1.png')}}" alt="">
-        </div>
-        <div class="swiper-slide" style="background:rgb(184,183,162)">
-            <img src="{{asset('images/frontend/banner/banner2.png')}}" alt="">
-        </div>
-        <div class="swiper-slide" style="background-color:rgb(117,199,197)">
-            <img src="{{asset('images/frontend/banner/banner3.png')}}" alt="">
-        </div>
-    </div>
-    <div class="swiper-pagination "></div>
-    <div class="swiper-button-prev hidden-xs"><span class="glyphicon glyphicon-menu-left"></span></div>
-    <div class="swiper-button-next hidden-xs"><span class="glyphicon glyphicon-menu-right"></span></div>
-</div>
-<div class="tab1">
+    @include('includes.sliderShow')
+    <div class="tab1">
     <div class="container">
         <h2 class="tab-h2">「最新文章<span class="hidden-xs">--这个世界充满阳光</span>」</h2>
         <p class="tab-p">小童，励志做出一款、属于自己的游戏，世界很大，到处充满阳光！</p>

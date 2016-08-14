@@ -28,7 +28,7 @@ elixir(function (mix) {
             'bootstrap.min.js',
             'jquery.fullpage.min.js',
             'swiper.jquery.min.js',
-            'scrollreveal.min.js',
+            'scrollreveal.js',
             'ch-ui.admin.js'
         ],
         './public/js/libs.js');

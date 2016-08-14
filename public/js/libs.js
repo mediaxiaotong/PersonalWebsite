@@ -39,7 +39,419 @@ i&&(e.preventedByNestedSwiper=!0),!y.params.allowSwipeToNext&&"next"===y.swipeDi
 y.params.hashnav&&y.hashnav&&y.hashnav.init(),y.params.a11y&&y.a11y&&y.a11y.init(),y.emit("onInit",y)},y.cleanupStyles=function(){y.container.removeClass(y.classNames.join(" ")).removeAttr("style"),y.wrapper.removeAttr("style"),y.slides&&y.slides.length&&y.slides.removeClass([y.params.slideVisibleClass,y.params.slideActiveClass,y.params.slideNextClass,y.params.slidePrevClass].join(" ")).removeAttr("style").removeAttr("data-swiper-column").removeAttr("data-swiper-row"),y.paginationContainer&&y.paginationContainer.length&&y.paginationContainer.removeClass(y.params.paginationHiddenClass),y.bullets&&y.bullets.length&&y.bullets.removeClass(y.params.bulletActiveClass),y.params.prevButton&&a(y.params.prevButton).removeClass(y.params.buttonDisabledClass),y.params.nextButton&&a(y.params.nextButton).removeClass(y.params.buttonDisabledClass),y.params.scrollbar&&y.scrollbar&&(y.scrollbar.track&&y.scrollbar.track.length&&y.scrollbar.track.removeAttr("style"),y.scrollbar.drag&&y.scrollbar.drag.length&&y.scrollbar.drag.removeAttr("style"))},y.destroy=function(e,a){y.detachEvents(),y.stopAutoplay(),y.params.scrollbar&&y.scrollbar&&y.params.scrollbarDraggable&&y.scrollbar.disableDraggable(),y.params.loop&&y.destroyLoop(),a&&y.cleanupStyles(),y.disconnectObservers(),y.params.keyboardControl&&y.disableKeyboardControl&&y.disableKeyboardControl(),y.params.mousewheelControl&&y.disableMousewheelControl&&y.disableMousewheelControl(),y.params.a11y&&y.a11y&&y.a11y.destroy(),y.emit("onDestroy"),e!==!1&&(y=null)},y.init(),y}};t.prototype={isSafari:function(){var e=navigator.userAgent.toLowerCase();return e.indexOf("safari")>=0&&e.indexOf("chrome")<0&&e.indexOf("android")<0}(),isUiWebView:/(iPhone|iPod|iPad).*AppleWebKit(?!.*Safari)/i.test(navigator.userAgent),isArray:function(e){return"[object Array]"===Object.prototype.toString.apply(e)},browser:{ie:window.navigator.pointerEnabled||window.navigator.msPointerEnabled,ieTouch:window.navigator.msPointerEnabled&&window.navigator.msMaxTouchPoints>1||window.navigator.pointerEnabled&&window.navigator.maxTouchPoints>1},device:function(){var e=navigator.userAgent,a=e.match(/(Android);?[\s\/]+([\d.]+)?/),t=e.match(/(iPad).*OS\s([\d_]+)/),s=e.match(/(iPod)(.*OS\s([\d_]+))?/),r=!t&&e.match(/(iPhone\sOS)\s([\d_]+)/);return{ios:t||r||s,android:a}}(),support:{touch:window.Modernizr&&Modernizr.touch===!0||function(){return!!("ontouchstart"in window||window.DocumentTouch&&document instanceof DocumentTouch)}(),transforms3d:window.Modernizr&&Modernizr.csstransforms3d===!0||function(){var e=document.createElement("div").style;return"webkitPerspective"in e||"MozPerspective"in e||"OPerspective"in e||"MsPerspective"in e||"perspective"in e}(),flexbox:function(){for(var e=document.createElement("div").style,a="alignItems webkitAlignItems webkitBoxAlign msFlexAlign mozBoxAlign webkitFlexDirection msFlexDirection mozBoxDirection mozBoxOrient webkitBoxDirection webkitBoxOrient".split(" "),t=0;t<a.length;t++)if(a[t]in e)return!0}(),observer:function(){return"MutationObserver"in window||"WebkitMutationObserver"in window}()},plugins:{}};for(var s=["jQuery","Zepto","Dom7"],r=0;r<s.length;r++)window[s[r]]&&e(window[s[r]]);var i;i="undefined"==typeof Dom7?window.Dom7||window.Zepto||window.jQuery:Dom7,i&&("transitionEnd"in i.fn||(i.fn.transitionEnd=function(e){function a(i){if(i.target===this)for(e.call(this,i),t=0;t<s.length;t++)r.off(s[t],a)}var t,s=["webkitTransitionEnd","transitionend","oTransitionEnd","MSTransitionEnd","msTransitionEnd"],r=this;if(e)for(t=0;t<s.length;t++)r.on(s[t],a);return this}),"transform"in i.fn||(i.fn.transform=function(e){for(var a=0;a<this.length;a++){var t=this[a].style;t.webkitTransform=t.MsTransform=t.msTransform=t.MozTransform=t.OTransform=t.transform=e}return this}),"transition"in i.fn||(i.fn.transition=function(e){"string"!=typeof e&&(e+="ms");for(var a=0;a<this.length;a++){var t=this[a].style;t.webkitTransitionDuration=t.MsTransitionDuration=t.msTransitionDuration=t.MozTransitionDuration=t.OTransitionDuration=t.transitionDuration=e}return this})),window.Swiper=t}(),"undefined"!=typeof module?module.exports=window.Swiper:"function"==typeof define&&define.amd&&define([],function(){"use strict";return window.Swiper});
 //# sourceMappingURL=maps/swiper.jquery.min.js.map
 
-!function(){"use strict";function e(n){return"undefined"==typeof this||Object.getPrototypeOf(this)!==e.prototype?new e(n):(O=this,O.version="3.3.1",O.tools=new E,O.isSupported()?(O.tools.extend(O.defaults,n||{}),t(O.defaults),O.store={elements:{},containers:[]},O.sequences={},O.history=[],O.uid=0,O.initialized=!1):"undefined"!=typeof console&&null!==console,O)}function t(e){if(e&&e.container){if("string"==typeof e.container)return window.document.documentElement.querySelector(e.container);if(O.tools.isNode(e.container))return e.container}return O.defaults.container}function n(e,t){return"string"==typeof e?Array.prototype.slice.call(t.querySelectorAll(e)):O.tools.isNode(e)?[e]:O.tools.isNodeList(e)?Array.prototype.slice.call(e):[]}function i(){return++O.uid}function o(e,t,n){t.container&&(t.container=n),e.config?e.config=O.tools.extendClone(e.config,t):e.config=O.tools.extendClone(O.defaults,t),"top"===e.config.origin||"bottom"===e.config.origin?e.config.axis="Y":e.config.axis="X"}function r(e){var t=window.getComputedStyle(e.domEl);e.styles||(e.styles={transition:{},transform:{},computed:{}},e.styles.inline=e.domEl.getAttribute("style")||"",e.styles.inline+="; visibility: visible; ",e.styles.computed.opacity=t.opacity,t.transition&&"all 0s ease 0s"!==t.transition?e.styles.computed.transition=t.transition+", ":e.styles.computed.transition=""),e.styles.transition.instant=s(e,0),e.styles.transition.delayed=s(e,e.config.delay),e.styles.transform.initial=" -webkit-transform:",e.styles.transform.target=" -webkit-transform:",a(e),e.styles.transform.initial+="transform:",e.styles.transform.target+="transform:",a(e)}function s(e,t){var n=e.config;return"-webkit-transition: "+e.styles.computed.transition+"-webkit-transform "+n.duration/1e3+"s "+n.easing+" "+t/1e3+"s, opacity "+n.duration/1e3+"s "+n.easing+" "+t/1e3+"s; transition: "+e.styles.computed.transition+"transform "+n.duration/1e3+"s "+n.easing+" "+t/1e3+"s, opacity "+n.duration/1e3+"s "+n.easing+" "+t/1e3+"s; "}function a(e){var t,n=e.config,i=e.styles.transform;t="top"===n.origin||"left"===n.origin?/^-/.test(n.distance)?n.distance.substr(1):"-"+n.distance:n.distance,parseInt(n.distance)&&(i.initial+=" translate"+n.axis+"("+t+")",i.target+=" translate"+n.axis+"(0)"),n.scale&&(i.initial+=" scale("+n.scale+")",i.target+=" scale(1)"),n.rotate.x&&(i.initial+=" rotateX("+n.rotate.x+"deg)",i.target+=" rotateX(0)"),n.rotate.y&&(i.initial+=" rotateY("+n.rotate.y+"deg)",i.target+=" rotateY(0)"),n.rotate.z&&(i.initial+=" rotateZ("+n.rotate.z+"deg)",i.target+=" rotateZ(0)"),i.initial+="; opacity: "+n.opacity+";",i.target+="; opacity: "+e.styles.computed.opacity+";"}function l(e){var t=e.config.container;t&&O.store.containers.indexOf(t)===-1&&O.store.containers.push(e.config.container),O.store.elements[e.id]=e}function c(e,t,n){var i={target:e,config:t,interval:n};O.history.push(i)}function f(){if(O.isSupported()){y();for(var e=0;e<O.store.containers.length;e++)O.store.containers[e].addEventListener("scroll",d),O.store.containers[e].addEventListener("resize",d);O.initialized||(window.addEventListener("scroll",d),window.addEventListener("resize",d),O.initialized=!0)}return O}function d(){T(y)}function u(){var e,t,n,i;O.tools.forOwn(O.sequences,function(o){i=O.sequences[o],e=!1;for(var r=0;r<i.elemIds.length;r++)n=i.elemIds[r],t=O.store.elements[n],q(t)&&!e&&(e=!0);i.active=e})}function y(){var e,t;u(),O.tools.forOwn(O.store.elements,function(n){t=O.store.elements[n],e=w(t),g(t)?(t.config.beforeReveal(t.domEl),e?t.domEl.setAttribute("style",t.styles.inline+t.styles.transform.target+t.styles.transition.delayed):t.domEl.setAttribute("style",t.styles.inline+t.styles.transform.target+t.styles.transition.instant),p("reveal",t,e),t.revealing=!0,t.seen=!0,t.sequence&&m(t,e)):v(t)&&(t.config.beforeReset(t.domEl),t.domEl.setAttribute("style",t.styles.inline+t.styles.transform.initial+t.styles.transition.instant),p("reset",t),t.revealing=!1)})}function m(e,t){var n=0,i=0,o=O.sequences[e.sequence.id];o.blocked=!0,t&&"onload"===e.config.useDelay&&(i=e.config.delay),e.sequence.timer&&(n=Math.abs(e.sequence.timer.started-new Date),window.clearTimeout(e.sequence.timer)),e.sequence.timer={started:new Date},e.sequence.timer.clock=window.setTimeout(function(){o.blocked=!1,e.sequence.timer=null,d()},Math.abs(o.interval)+i-n)}function p(e,t,n){var i=0,o=0,r="after";switch(e){case"reveal":o=t.config.duration,n&&(o+=t.config.delay),r+="Reveal";break;case"reset":o=t.config.duration,r+="Reset"}t.timer&&(i=Math.abs(t.timer.started-new Date),window.clearTimeout(t.timer.clock)),t.timer={started:new Date},t.timer.clock=window.setTimeout(function(){t.config[r](t.domEl),t.timer=null},o-i)}function g(e){if(e.sequence){var t=O.sequences[e.sequence.id];return t.active&&!t.blocked&&!e.revealing&&!e.disabled}return q(e)&&!e.revealing&&!e.disabled}function w(e){var t=e.config.useDelay;return"always"===t||"onload"===t&&!O.initialized||"once"===t&&!e.seen}function v(e){if(e.sequence){var t=O.sequences[e.sequence.id];return!t.active&&e.config.reset&&e.revealing&&!e.disabled}return!q(e)&&e.config.reset&&e.revealing&&!e.disabled}function b(e){return{width:e.clientWidth,height:e.clientHeight}}function h(e){if(e&&e!==window.document.documentElement){var t=x(e);return{x:e.scrollLeft+t.left,y:e.scrollTop+t.top}}return{x:window.pageXOffset,y:window.pageYOffset}}function x(e){var t=0,n=0,i=e.offsetHeight,o=e.offsetWidth;do isNaN(e.offsetTop)||(t+=e.offsetTop),isNaN(e.offsetLeft)||(n+=e.offsetLeft),e=e.offsetParent;while(e);return{top:t,left:n,height:i,width:o}}function q(e){function t(){var t=c+a*s,n=f+l*s,i=d-a*s,y=u-l*s,m=r.y+e.config.viewOffset.top,p=r.x+e.config.viewOffset.left,g=r.y-e.config.viewOffset.bottom+o.height,w=r.x-e.config.viewOffset.right+o.width;return t<g&&i>m&&n>p&&y<w}function n(){return"fixed"===window.getComputedStyle(e.domEl).position}var i=x(e.domEl),o=b(e.config.container),r=h(e.config.container),s=e.config.viewFactor,a=i.height,l=i.width,c=i.top,f=i.left,d=c+a,u=f+l;return t()||n()}function E(){}var O,T;e.prototype.defaults={origin:"bottom",distance:"20px",duration:500,delay:0,rotate:{x:0,y:0,z:0},opacity:0,scale:.9,easing:"cubic-bezier(0.6, 0.2, 0.1, 1)",container:window.document.documentElement,mobile:!0,reset:!1,useDelay:"always",viewFactor:.2,viewOffset:{top:0,right:0,bottom:0,left:0},beforeReveal:function(e){},afterReveal:function(e){},beforeReset:function(e){},afterReset:function(e){}},e.prototype.isSupported=function(){var e=document.documentElement.style;return"WebkitTransition"in e&&"WebkitTransform"in e||"transition"in e&&"transform"in e},e.prototype.reveal=function(e,s,a,d){var u,y,m,p,g,w;if(void 0!==s&&"number"==typeof s?(a=s,s={}):void 0!==s&&null!==s||(s={}),u=t(s),y=n(e,u),!y.length)return O;a&&"number"==typeof a&&(w=i(),g=O.sequences[w]={id:w,interval:a,elemIds:[],active:!1});for(var v=0;v<y.length;v++)p=y[v].getAttribute("data-sr-id"),p?m=O.store.elements[p]:(m={id:i(),domEl:y[v],seen:!1,revealing:!1},m.domEl.setAttribute("data-sr-id",m.id)),g&&(m.sequence={id:g.id,index:g.elemIds.length},g.elemIds.push(m.id)),o(m,s,u),r(m),l(m),O.tools.isMobile()&&!m.config.mobile||!O.isSupported()?(m.domEl.setAttribute("style",m.styles.inline),m.disabled=!0):m.revealing||m.domEl.setAttribute("style",m.styles.inline+m.styles.transform.initial);return!d&&O.isSupported()&&(c(e,s,a),O.initTimeout&&window.clearTimeout(O.initTimeout),O.initTimeout=window.setTimeout(f,0)),O},e.prototype.sync=function(){if(O.history.length&&O.isSupported()){for(var e=0;e<O.history.length;e++){var t=O.history[e];O.reveal(t.target,t.config,t.interval,!0)}f()}return O},E.prototype.isObject=function(e){return null!==e&&"object"==typeof e&&e.constructor===Object},E.prototype.isNode=function(e){return"object"==typeof window.Node?e instanceof window.Node:e&&"object"==typeof e&&"number"==typeof e.nodeType&&"string"==typeof e.nodeName},E.prototype.isNodeList=function(e){var t=Object.prototype.toString.call(e),n=/^\[object (HTMLCollection|NodeList|Object)\]$/;return"object"==typeof window.NodeList?e instanceof window.NodeList:e&&"object"==typeof e&&n.test(t)&&"number"==typeof e.length&&(0===e.length||this.isNode(e[0]))},E.prototype.forOwn=function(e,t){if(!this.isObject(e))throw new TypeError('Expected "object", but received "'+typeof e+'".');for(var n in e)e.hasOwnProperty(n)&&t(n)},E.prototype.extend=function(e,t){return this.forOwn(t,function(n){this.isObject(t[n])?(e[n]&&this.isObject(e[n])||(e[n]={}),this.extend(e[n],t[n])):e[n]=t[n]}.bind(this)),e},E.prototype.extendClone=function(e,t){return this.extend(this.extend({},e),t)},E.prototype.isMobile=function(){return/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)},T=window.requestAnimationFrame||window.webkitRequestAnimationFrame||window.mozRequestAnimationFrame||function(e){window.setTimeout(e,1e3/60)},"function"==typeof define&&"object"==typeof define.amd&&define.amd?define(function(){return e}):"undefined"!=typeof module&&module.exports?module.exports=e:window.ScrollReveal=e}();
+/*
+                       _ _ _____                      _   _
+                      | | |  __ \                    | | (_)
+    ___  ___ _ __ ___ | | | |__) |_____   _____  __ _| |  _ ___
+   / __|/ __| '__/ _ \| | |  _  // _ \ \ / / _ \/ _` | | | / __|
+   \__ \ (__| | | (_) | | | | \ \  __/\ V /  __/ (_| | |_| \__ \
+   |___/\___|_|  \___/|_|_|_|  \_\___| \_/ \___|\__,_|_(_) |___/ v.0.1.3
+                                                        _/ |
+                                                       |__/
+
+    "Declarative on-scroll reveal animations."
+
+/*=============================================================================
+
+    scrollReveal.js was inspired by cbpScroller.js (c) 2014 Codrops.
+
+    Licensed under the MIT license.
+    http://www.opensource.org/licenses/mit-license.php
+
+=============================================================================*/
+
+/*! scrollReveal.js v0.1.3 (c) 2014 Julian Lloyd | MIT license */
+
+/*===========================================================================*/
+
+
+window.scrollReveal = (function (window) {
+
+  'use strict';
+
+  // generator (increments) for the next scroll-reveal-id
+  var nextId = 1;
+
+  /**
+   * RequestAnimationFrame polyfill
+   * @function
+   * @private
+   */
+  var requestAnimFrame = (function () {
+    return window.requestAnimationFrame ||
+      window.webkitRequestAnimationFrame ||
+      window.mozRequestAnimationFrame ||
+      function (callback) {
+        window.setTimeout(callback, 1000 / 60);
+    };
+  }());
+
+  function scrollReveal(options) {
+
+      this.options = this.extend(this.defaults, options);
+      this.docElem = this.options.elem;
+      this.styleBank = {};
+
+      if (this.options.init == true) this.init();
+  }
+
+  scrollReveal.prototype = {
+
+    defaults: {
+      after:   '0s',
+      enter:   'bottom',
+      move:    '24px',
+      over:    '0.66s',
+      easing:  'ease-in-out',
+      opacity: 0,
+      complete: function() {},
+
+  //  if 0, the element is considered in the viewport as soon as it enters
+  //  if 1, the element is considered in the viewport when it's fully visible
+      viewportFactor: 0.33,
+
+  // if false, animations occur only once
+  // if true, animations occur each time an element enters the viewport
+      reset: false,
+
+  // if true, scrollReveal.init() is automaticaly called upon instantiation
+      init: true,
+	  elem: window.document.documentElement
+    },
+
+    /*=============================================================================*/
+
+    init: function () {
+
+      this.scrolled = false;
+
+      var self = this;
+
+  //  Check DOM for the data-scrollReveal attribute
+  //  and initialize all found elements.
+      this.elems = Array.prototype.slice.call(this.docElem.querySelectorAll('[data-scroll-reveal]'));
+      this.elems.forEach(function (el, i) {
+
+    //  Capture original style attribute
+        var id = el.getAttribute("data-scroll-reveal-id");
+        if (!id) {
+            id = nextId++;
+            el.setAttribute("data-scroll-reveal-id", id);
+        }
+        if (!self.styleBank[id]) {
+          self.styleBank[id] = el.getAttribute('style');
+        }
+
+        self.update(el);
+      });
+
+      var scrollHandler = function (e) {
+        // No changing, exit
+        if (!self.scrolled) {
+          self.scrolled = true;
+          requestAnimFrame(function () {
+            self._scrollPage();
+          });
+        }
+      };
+
+      var resizeHandler = function () {
+
+    //  If we’re still waiting for settimeout, reset the timer.
+        if (self.resizeTimeout) {
+          clearTimeout(self.resizeTimeout);
+        }
+        function delayed() {
+          self._scrollPage();
+          self.resizeTimeout = null;
+        }
+        self.resizeTimeout = setTimeout(delayed, 200);
+      };
+
+      // captureScroll
+      if (this.docElem == window.document.documentElement) {
+			window.addEventListener('scroll', scrollHandler, false);
+			window.addEventListener('resize', resizeHandler, false);
+		}
+		else {
+			this.docElem.addEventListener('scroll', scrollHandler, false);
+		}
+    },
+
+    /*=============================================================================*/
+
+    _scrollPage: function () {
+        var self = this;
+
+        this.elems.forEach(function (el, i) {
+          self.update(el);
+        });
+        this.scrolled = false;
+    },
+
+    /*=============================================================================*/
+
+    parseLanguage: function (el) {
+
+  //  Splits on a sequence of one or more commas or spaces.
+      var words = el.getAttribute('data-scroll-reveal').split(/[, ]+/),
+          parsed = {};
+
+      function filter (words) {
+        var ret = [],
+
+            blacklist = [
+              "from",
+              "the",
+              "and",
+              "then",
+              "but",
+              "with"
+            ];
+
+        words.forEach(function (word, i) {
+          if (blacklist.indexOf(word) > -1) {
+            return;
+          }
+          ret.push(word);
+        });
+
+        return ret;
+      }
+
+      words = filter(words);
+
+      words.forEach(function (word, i) {
+
+        switch (word) {
+          case "enter":
+            parsed.enter = words[i + 1];
+            return;
+
+          case "after":
+            parsed.after = words[i + 1];
+            return;
+
+          case "wait":
+            parsed.after = words[i + 1];
+            return;
+
+          case "move":
+            parsed.move = words[i + 1];
+            return;
+
+          case "ease":
+            parsed.move = words[i + 1];
+            parsed.ease = "ease";
+            return;
+
+          case "ease-in":
+            parsed.move = words[i + 1];
+            parsed.easing = "ease-in";
+            return;
+
+          case "ease-in-out":
+            parsed.move = words[i + 1];
+            parsed.easing = "ease-in-out";
+            return;
+
+          case "ease-out":
+            parsed.move = words[i + 1];
+            parsed.easing = "ease-out";
+            return;
+
+          case "over":
+            parsed.over = words[i + 1];
+            return;
+
+          default:
+            return;
+        }
+      });
+
+      return parsed;
+    },
+
+
+    /*=============================================================================*/
+
+    update: function (el) {
+
+      var that = this;
+      var css   = this.genCSS(el);
+      var style = this.styleBank[el.getAttribute("data-scroll-reveal-id")];
+
+      if (style != null) style += ";"; else style = "";
+
+      if (!el.getAttribute('data-scroll-reveal-initialized')) {
+        el.setAttribute('style', style + css.initial);
+        el.setAttribute('data-scroll-reveal-initialized', true);
+      }
+
+      if (!this.isElementInViewport(el, this.options.viewportFactor)) {
+        if (this.options.reset) {
+          el.setAttribute('style', style + css.initial + css.reset);
+        }
+        return;
+      }
+
+      if (el.getAttribute('data-scroll-reveal-complete')) return;
+
+      if (this.isElementInViewport(el, this.options.viewportFactor)) {
+        el.setAttribute('style', style + css.target + css.transition);
+    //  Without reset enabled, we can safely remove the style tag
+    //  to prevent CSS specificy wars with authored CSS.
+        if (!this.options.reset) {
+          setTimeout(function () {
+            if (style != "") {
+              el.setAttribute('style', style);
+            } else {
+              el.removeAttribute('style');
+            }
+            el.setAttribute('data-scroll-reveal-complete',true);
+            that.options.complete(el);
+          }, css.totalDuration);
+        }
+      return;
+      }
+    },
+
+    /*=============================================================================*/
+
+    genCSS: function (el) {
+      var parsed = this.parseLanguage(el),
+          enter,
+          axis;
+
+      if (parsed.enter) {
+
+        if (parsed.enter == "top" || parsed.enter == "bottom") {
+          enter = parsed.enter;
+          axis = "y";
+        }
+
+        if (parsed.enter == "left" || parsed.enter == "right") {
+          enter = parsed.enter;
+          axis = "x";
+        }
+
+      } else {
+
+        if (this.options.enter == "top" || this.options.enter == "bottom") {
+          enter = this.options.enter
+          axis = "y";
+        }
+
+        if (this.options.enter == "left" || this.options.enter == "right") {
+          enter = this.options.enter
+          axis = "x";
+        }
+      }
+
+  //  After all values are parsed, let’s make sure our our
+  //  pixel distance is negative for top and left entrances.
+  //
+  //  ie. "move 25px from top" starts at 'top: -25px' in CSS.
+
+      if (enter == "top" || enter == "left") {
+        if (parsed.move) {
+          parsed.move = "-" + parsed.move;
+        }
+        else {
+          parsed.move = "-" + this.options.move;
+        }
+      }
+
+      var dist    = parsed.move    || this.options.move,
+          dur     = parsed.over    || this.options.over,
+          delay   = parsed.after   || this.options.after,
+          easing  = parsed.easing  || this.options.easing,
+          opacity = parsed.opacity || this.options.opacity;
+
+      var transition = "-webkit-transition: -webkit-transform " + dur + " " + easing + " " + delay + ",  opacity " + dur + " " + easing + " " + delay + ";" +
+                               "transition: transform " + dur + " " + easing + " " + delay + ", opacity " + dur + " " + easing + " " + delay + ";" +
+                      "-webkit-perspective: 1000;" +
+              "-webkit-backface-visibility: hidden;";
+
+  //  The same as transition, but removing the delay for elements fading out.
+      var reset = "-webkit-transition: -webkit-transform " + dur + " " + easing + " 0s,  opacity " + dur + " " + easing + " " + delay + ";" +
+                          "transition: transform " + dur + " " + easing + " 0s,  opacity " + dur + " " + easing + " " + delay + ";" +
+                 "-webkit-perspective: 1000;" +
+         "-webkit-backface-visibility: hidden;";
+
+      var initial = "-webkit-transform: translate" + axis + "(" + dist + ");" +
+                            "transform: translate" + axis + "(" + dist + ");" +
+                              "opacity: " + opacity + ";";
+
+      var target = "-webkit-transform: translate" + axis + "(0);" +
+                           "transform: translate" + axis + "(0);" +
+                             "opacity: 1;";
+      return {
+        transition: transition,
+        initial: initial,
+        target: target,
+        reset: reset,
+        totalDuration: ((parseFloat(dur) + parseFloat(delay)) * 1000)
+      };
+    },
+
+    getViewportH : function () {
+      var client = this.docElem['clientHeight'],
+        inner = window['innerHeight'];
+
+      if (this.docElem == window.document.documentElement)
+                return (client < inner) ? inner : client;
+            else
+                return client;
+    },
+
+    getOffset : function(el) {
+      var offsetTop = 0,
+          offsetLeft = 0;
+
+      do {
+        if (!isNaN(el.offsetTop)) {
+          offsetTop += el.offsetTop;
+        }
+        if (!isNaN(el.offsetLeft)) {
+          offsetLeft += el.offsetLeft;
+        }
+      } while (el = el.offsetParent)
+
+      return {
+        top: offsetTop,
+        left: offsetLeft
+      }
+    },
+
+    isElementInViewport : function(el, h) {
+      var scrolled = this.docElem.scrollTop + this.docElem.offsetTop;
+		if (this.docElem == window.document.documentElement)scrolled = window.pageYOffset;
+		var
+			viewed = scrolled + this.getViewportH(),
+          elH = el.offsetHeight,
+          elTop = this.getOffset(el).top,
+          elBottom = elTop + elH,
+          h = h || 0;
+
+      return (elTop + elH * h) <= viewed
+          && (elBottom) >= scrolled
+          || (el.currentStyle? el.currentStyle : window.getComputedStyle(el, null)).position == 'fixed';
+    },
+
+    extend: function (a, b){
+      for (var key in b) {
+        if (b.hasOwnProperty(key)) {
+          a[key] = b[key];
+        }
+      }
+      return a;
+    }
+  }; // end scrollReveal.prototype
+
+  return scrollReveal;
+})(window);
+
 /* 
 * @Author: ChenHua <276004561@qq.com>
 * @Date:   2015-09-14 21:11:36

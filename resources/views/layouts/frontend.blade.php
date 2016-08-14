@@ -11,7 +11,6 @@
     <link rel="stylesheet" type="text/css" href="{{asset('css/base.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/page.css')}}" />
     <link rel="stylesheet" type="text/css" href="{{asset('css/gotop.css')}}" />
-
     <script src="{{asset('js/libs.js')}}"></script>
 </head>
 <body class="login-layout">
