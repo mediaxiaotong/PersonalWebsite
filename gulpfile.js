@@ -19,6 +19,7 @@ elixir(function (mix) {
         'font-awesome.min.css',
         'jquery.fullpage.min.css',
         'animate.min.css',
+        'swiper.min.css',
         'ch-ui.admin.css'
     ], './public/css/libs.css');
 
@@ -26,6 +27,8 @@ elixir(function (mix) {
             'jquery.min.js',
             'bootstrap.min.js',
             'jquery.fullpage.min.js',
+            'swiper.jquery.min.js',
+            'scrollreveal.min.js',
             'ch-ui.admin.js'
         ],
         './public/js/libs.js');
