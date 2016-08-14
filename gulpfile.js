@@ -11,21 +11,25 @@ var elixir = require('laravel-elixir');
  |
  */
 
-elixir(function(mix) {
+elixir(function (mix) {
     mix.sass('app.scss');
 
     mix.styles([
         'bootstrap.min.css',
-        'animate.min.css',
         'font-awesome.min.css',
+        'jquery.fullpage.min.css',
+        'animate.min.css',
+        'swiper.min.css',
         'ch-ui.admin.css'
-    ],'./public/css/libs.css');
-    
+    ], './public/css/libs.css');
+
     mix.scripts([
-        'jquery.min.js',
-        'bootstrap.min.js',
-        'layer.js',
-        'ch-ui.admin.js'
-    ],
-    './public/js/libs.js');
+            'jquery.min.js',
+            'bootstrap.min.js',
+            'jquery.fullpage.min.js',
+            'swiper.jquery.min.js',
+            'scrollreveal.js',
+            'ch-ui.admin.js'
+        ],
+        './public/js/libs.js');
 });

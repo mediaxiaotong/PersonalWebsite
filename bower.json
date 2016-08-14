@@ -1,0 +1,39 @@
+{
+  "name": "laravelblog",
+  "description": "A free hosting blog system powered by laravel.",
+  "main": "",
+  "authors": [
+    "luochuanyuewu <luochuanyuewu@gmail.com>"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "blog",
+    "luochuanyuewu",
+    "mediaxiaotong",
+    "free"
+  ],
+  "homepage": "mediaxiaotong.com",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "fullpage.js": "^2.8.2",
+    "bootstrap": "^3.3.7",
+    "jQuery": "^3.1.0",
+    "font-awesome": "fontawesome#^4.6.3",
+    "animate.css": "^3.5.2",
+    "scrollreveal": "^3.3.1",
+    "Swiper": "swiper#^3.3.1",
+    "layer": "*",
+    "respond": "^1.4.2",
+    "jquery.nicescroll": "nicescroll#^3.6.8"
+  },
+  "devDependencies": {
+    "html5shiv": "^3.7.3"
+  }
+}

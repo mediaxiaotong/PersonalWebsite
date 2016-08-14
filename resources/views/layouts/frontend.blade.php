@@ -4,19 +4,20 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
-    <link rel="shortcut icon" href="{{asset('home/images/icon.ico')}}" type="image/x-icon">
+    <link rel="shortcut icon" href="{{asset('images/frontend/icon.ico')}}" type="image/x-icon">
     @yield('info')
-    <link rel="stylesheet" type="text/css" href="{{asset('home/css/swiper.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('home/css/base.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('home/css/page.css')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('home/css/gotop.css')}}" />
-    <script src="{{asset('home/js/jquery.min.js')}}"></script>
+    <link rel="stylesheet" type="text/css" href="{{asset('css/libs.css')}}">
+
+    <link rel="stylesheet" type="text/css" href="{{asset('css/base.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/page.css')}}" />
+    <link rel="stylesheet" type="text/css" href="{{asset('css/gotop.css')}}" />
+    <script src="{{asset('js/libs.js')}}"></script>
 </head>
 <body class="login-layout">
 <nav class="navbar navbar-default navbar-fixed-top navbar-qshang">
     <div class="container">
         <div class="navbar-header">
-            <a href="{{url('home/index')}}" class="navbar-brand navlogo-qshang animated"><img src="{{url('home/images/logo.png')}}" alt="小童博客"></a>
+            <a href="{{url('index')}}" class="navbar-brand navlogo-qshang animated"><img src="{{url('images/frontend/logo.png')}}" alt="小童博客"></a>
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -25,16 +26,16 @@
         </div>
         <div class="collapse navbar-collapse" id="navbar-collapse">
             <ul class="nav navbar-nav navbar-right nav-qshang">
-                <li id="home"><a href="{{url('home/index')}}" class="animated"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+                <li id="home"><a href="{{url('index')}}" class="animated"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
                 <li id="clas" class="dropdown">
                     <a class="dropdown-toggle animated" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="glyphicon glyphicon-list"></span> 分类<span class="caret"></span></a>
                     <ul class="dropdown-menu">
                         @foreach($cate_nav as $cn)
-                            <li><a href="{{url('home/category/'.$cn->id)}}" class="glyphicon glyphicon-align-justify">&nbsp;{{$cn->name}}</a></li>
+                            <li><a href="{{url('category/'.$cn->id)}}" class="glyphicon glyphicon-align-justify">&nbsp;{{$cn->name}}</a></li>
                         @endforeach
                     </ul>
                 </li>
-                <li id="liuyan"><a href="{{url('home/message')}}" class="animated"><span class="glyphicon glyphicon-fire"></span> 留言板</a></li>
+                <li id="liuyan"><a href="{{url('message')}}" class="animated"><span class="glyphicon glyphicon-fire"></span> 留言板</a></li>
                 {{--<li id="photo"><a href="{{url('/article')}}" class="animated"><span class="glyphicon glyphicon-picture"></span> 相册</a></li>--}}
                 <li>
                     <a class="animated" href="#" data-toggle="modal" data-target="#album"><span class="glyphicon glyphicon-picture"></span> 相册</a></a>
@@ -51,8 +52,8 @@
                     <li>
                         <a class="animated" href="#"><span class="glyphicon glyphicon-user"></span> {{session('userName')}}</a></a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{url('home/category/'.$cn->id)}}">更改信息</a></li>
-                            <li><a href="{{url('home/quit')}}">退出</a></li>
+                            <li><a href="{{url('category/'.$cn->id)}}">更改信息</a></li>
+                            <li><a href="{{url('quit')}}">退出</a></li>
                         </ul>
                     </li>
                 @else
@@ -89,9 +90,9 @@
                     <h4 class="title"><span class="glyphicon glyphicon-tags"></span>&nbsp;&nbsp;标签云</h4>
                     <div class="tagBox">
                         @foreach($cate_nav as $cn)
-                        <a class="label label-success animated" href="{{url('home/category/'.$cn->id)}}">{{$cn->name}}</a>
-                        <a class="label label-warning animated" href="{{url('home/category/'.$cn->id)}}">{{$cn->name}}</a>
-                        <a class="label label-danger animated" href="{{url('home/category/'.$cn->id)}}">{{$cn->name}}</a>
+                        <a class="label label-success animated" href="{{url('category/'.$cn->id)}}">{{$cn->name}}</a>
+                        <a class="label label-warning animated" href="{{url('category/'.$cn->id)}}">{{$cn->name}}</a>
+                        <a class="label label-danger animated" href="{{url('category/'.$cn->id)}}">{{$cn->name}}</a>
                         @endforeach
                     </div>
                 </div>
@@ -108,7 +109,7 @@
                         <ol class="breadcrumb chip qshang-box" style="">
                             <li><span class="tag bg-dot">{{$k}}</span></li>
                             <li style="position: relative;top:5px; overflow: hidden;text-overflow:ellipsis; white-space: nowrap;width:150px">
-                                <a href="{{url('/home/article/'.$h->id)}}" title="{{$h->title}}">{{$h->title}}</a>
+                                <a href="{{url('article/'.$h->id)}}" title="{{$h->title}}">{{$h->title}}</a>
                             </li>
                             <li><span class="glyphicon glyphicon-eye-open"></span> {{$h->view}}</li>
                         </ol>
@@ -150,19 +151,19 @@
                 <div class="widget">
                     <h4 class="title">网站相关</h4>
                     <div class="webBox">
-                        <button onclick="javascrtpt:window.location.href='{{url('home/index')}}'" type="button" class="btn glyphicon glyphicon-home btn-xs" data-toggle="modal" data-target="#apply">
+                        <button onclick="javascrtpt:window.location.href='{{url('index')}}'" type="button" class="btn glyphicon glyphicon-home btn-xs" data-toggle="modal" data-target="#apply">
                             返回首页
                         </button>
-                        <button onclick="javascrtpt:window.location.href='{{url('home/login')}}'" type="button" class="btn glyphicon glyphicon-user btn-xs" data-toggle="modal" data-target="#apply">
+                        <button onclick="javascrtpt:window.location.href='{{url('login')}}'" type="button" class="btn glyphicon glyphicon-user btn-xs" data-toggle="modal" data-target="#apply">
                             注册登录
                         </button>
-                        <button onclick="javascrtpt:window.location.href='{{url('home/message')}}'" type="button" class="btn glyphicon glyphicon-comment btn-xs" data-toggle="modal" data-target="#apply">
+                        <button onclick="javascrtpt:window.location.href='{{url('message')}}'" type="button" class="btn glyphicon glyphicon-comment btn-xs" data-toggle="modal" data-target="#apply">
                             我要留言
                         </button>
                         <button onclick="javascrtpt:window.location.href='https://github.com/mediaxiaotong/PersonalWebsite.git'" type="button" class="btn glyphicon glyphicon-cloud-download btn-xs" data-toggle="modal" data-target="#apply">
                             源码下载
                         </button>
-                        <button onclick="javascrtpt:window.location.href='{{url('admin/index')}}'" type="button" class="btn glyphicon glyphicon-send btn-xs" data-toggle="modal" data-target="#apply">
+                        <button onclick="javascrtpt:window.location.href='{{url('backend/index')}}'" type="button" class="btn glyphicon glyphicon-send btn-xs" data-toggle="modal" data-target="#apply">
                             进入后台
                         </button>
                     </div>
@@ -190,7 +191,7 @@
                     <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 </div>
                 <div class="loginBox">
-                    <a href="{{url('home/login')}}" title="跳转登陆"><img src="{{asset('home/images/logo.png')}}"></a>
+                    <a href="{{url('login')}}" title="跳转登陆"><img src="{{asset('images/frontend/logo.png')}}"></a>
                 </div>
             </div>
             <div class="modal-footer">
@@ -245,15 +246,14 @@
         {!! Config::get('web_config.copyright') !!}
     </div>
 </div>
-<script src="{{asset('home/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('home/js/zzsc.js')}}"></script>
-<script src="{{asset('home/js/jquery.nicescroll.js')}}"></script>
-<script src="{{asset('home/js/scrollReveal.js')}}"></script>
-<script src="{{asset('extend/umeditor/umeditor.config.js')}}"></script>
-<script src="{{asset('extend/umeditor/umeditor.min.js')}}"></script>
-<script src="{{asset('home/js/swiper.min.js')}}"></script>
-<script src="{{asset('home/js/base.js')}}"></script>
-<script src="{{asset('home/layer/layer.js')}}"></script>
-<script src="{{asset('home/js/gotop.js')}}"></script>
+
+
+
+
+<script src="{{asset('js/zzsc.js')}}"></script>
+<script src="{{asset('js/base.js')}}"></script>
+<script src="{{asset('layer/layer.js')}}"></script>
+<script src="{{asset('js/gotop.js')}}"></script>
+
 </body>
 </html>
