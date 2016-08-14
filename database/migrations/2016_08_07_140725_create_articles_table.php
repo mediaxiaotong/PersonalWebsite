@@ -22,7 +22,7 @@ class CreateArticlesTable extends Migration
             $table->text('content');//->default('')->comment('文章内容');
             $table->string('editor');//->default('')->comment('文章编辑者');
             $table->integer('view');//->default(0)->comment('文章查看次数');
-            $table->integer('cate_id');//->default(0)->comment('文章分类');
+            $table->integer('category_id');//->default(0)->comment('文章分类');
             $table->timestamps();//->comment('文章创建时间');
         });
     }
