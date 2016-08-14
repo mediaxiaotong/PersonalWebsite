@@ -8,11 +8,10 @@
     <title>{{Config::get('web_config.web_title')}} - {{Config::get('web_config.seo_title')}}</title>
     <meta name="keywords" content="{{Config::get('web_config.keywords')}}" />
     <meta name="description" content="{{Config::get('web_config.description')}}" />
-    <link rel="stylesheet" type="text/css" href="{{asset('home/css/bootstrap.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('home/css/animate.min.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('home/css/jquery.fullPage.css')}}">
-    <link rel="stylesheet" type="text/css" href="{{asset('home/css/index.css')}}">
-    {{--<link rel="stylesheet" type="text/css" href="{{asset('home/css/base.css')}}" />--}}
+
+    <link rel="stylesheet" type="text/css" href="{{asset('css/libs.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{asset('css/landing.css')}}">
+
 </head>
 <body>
 <div class="navbar navbar-default navbar-fixed-top navbar-qshang hidden-xs">
@@ -159,9 +158,10 @@
 </div>
 
 
-<script src="{{asset('home/js/jquery.min.js')}}"></script>
-<script src="{{asset('home/js/bootstrap.min.js')}}"></script>
-<script src="{{asset('home/js/jquery.fullPage.min.js')}}"></script>
-<script src="{{asset('home/js/index.js')}}"></script>
+
+
+<script src="{{asset('js/libs.js')}}"></script>
+
+<script src="{{asset('js/landing.js')}}"></script>
 </body>
 </html>

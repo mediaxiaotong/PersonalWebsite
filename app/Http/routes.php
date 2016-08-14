@@ -35,7 +35,7 @@ Route::group(['prefix'=>'backend','namespace'=>'Backend'], function (){
 });
 
 //后台管理员路由
-Route::group(['middleware' => ['admin.login'],'namespace'=>'Backend'], function () {
+Route::group(['middleware' => ['admin.login'],'prefix'=>'backend','namespace'=>'Backend'], function () {
     //主页路由
     Route::get('index', 'IndexController@index');
     Route::get('info', 'IndexController@info');
