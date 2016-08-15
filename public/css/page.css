@@ -1,0 +1,33 @@
+.loading{
+	display:block;
+	margin:0 auto;
+	text-align:center;
+	margin-top:20px;
+}
+.pager{
+	text-align:center; 
+	font-size:12px;
+}
+.pager a,.pager span{
+	background: #f4645f;
+    color: #fff;
+    margin: 0 3px;
+    display: inline-block;
+    line-height: 36px;
+    padding: 0 14px;
+    border-radius: 2px;
+    font-family:'宋体';
+}
+.pager span{
+	letter-spacing:5px;
+}
+.pager a{
+	font-weight:bold
+}
+.pager a:hover,.pager a.current{
+	background-color:#f60; 
+	color:#fff; 
+	cursor:pointer;
+	text-decoration:none;
+}
+
